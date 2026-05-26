@@ -1,3 +1,4 @@
 .agents/
+.deploy/
 skills-lock.json
 .DS_Store
