@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Fotile homepage information architecture</title>
+  <desc id="desc">A minimalist structure map showing how the Fotile mini program homepage content is organized.</desc>
+  <rect width="1600" height="1000" fill="#f4f1ea"/>
+  <rect x="92" y="82" width="1416" height="836" fill="none" stroke="#171714" stroke-width="2"/>
+  <g font-family="Arial, 'PingFang SC', sans-serif">
+    <text x="132" y="156" fill="#171714" font-size="24" font-weight="700">FOTILE HOMEPAGE STRUCTURE</text>
+    <text x="132" y="232" fill="#171714" font-size="76" font-weight="700">首页信息架构</text>
+    <text x="132" y="286" fill="#5d5850" font-size="24">用用户任务组织内容，而不是让运营模块简单堆叠。</text>
+    <rect x="132" y="370" width="360" height="432" fill="#171714"/>
+    <text x="168" y="430" fill="#ffffff" font-size="34" font-weight="700">用户进入首页</text>
+    <text x="168" y="486" fill="#d8d1c5" font-size="22">常见任务</text>
+    <text x="168" y="540" fill="#ffffff" font-size="24">了解产品</text>
+    <text x="168" y="590" fill="#ffffff" font-size="24">寻找服务</text>
+    <text x="168" y="640" fill="#ffffff" font-size="24">查看活动</text>
+    <text x="168" y="690" fill="#ffffff" font-size="24">进入个人功能</text>
+    <path d="M528 586H656" stroke="#171714" stroke-width="2"/>
+    <path d="M642 572L656 586L642 600" fill="none" stroke="#171714" stroke-width="2"/>
+    <g transform="translate(684 350)">
+      <rect x="0" y="0" width="330" height="116" fill="none" stroke="#171714" stroke-width="2"/>
+      <text x="26" y="46" fill="#171714" font-size="26" font-weight="700">品牌信任</text>
+      <text x="26" y="84" fill="#5d5850" font-size="18">高端家电语境 / 视觉秩序</text>
+      <rect x="0" y="158" width="330" height="116" fill="#171714"/>
+      <text x="26" y="204" fill="#ffffff" font-size="26" font-weight="700">核心服务</text>
+      <text x="26" y="242" fill="#d8d1c5" font-size="18">安装 / 售后 / 咨询 / 会员</text>
+      <rect x="0" y="316" width="330" height="116" fill="none" stroke="#171714" stroke-width="2"/>
+      <text x="26" y="362" fill="#171714" font-size="26" font-weight="700">业务转化</text>
+      <text x="26" y="400" fill="#5d5850" font-size="18">产品入口 / 活动入口 / 留资</text>
+    </g>
+    <g transform="translate(1090 350)">
+      <rect x="0" y="0" width="330" height="432" fill="#e5ded2" stroke="#171714" stroke-width="2"/>
+      <text x="30" y="54" fill="#171714" font-size="26" font-weight="700">高保真原型验证</text>
+      <path d="M30 100H300" stroke="#171714" stroke-width="1.5"/>
+      <text x="30" y="154" fill="#3e3a35" font-size="22">页面节奏</text>
+      <text x="30" y="210" fill="#3e3a35" font-size="22">入口反馈</text>
+      <text x="30" y="266" fill="#3e3a35" font-size="22">模块权重</text>
+      <text x="30" y="322" fill="#3e3a35" font-size="22">运营更新边界</text>
+      <rect x="30" y="360" width="200" height="42" fill="#171714"/>
+      <text x="48" y="388" fill="#ffffff" font-size="18" font-weight="700">可演示方案</text>
+    </g>
+    <path d="M1014 408H1090" stroke="#171714" stroke-width="2"/>
+    <path d="M1014 566H1090" stroke="#171714" stroke-width="2"/>
+    <path d="M1014 724H1090" stroke="#171714" stroke-width="2"/>
+  </g>
+</svg>

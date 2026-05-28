@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">FOTILE mini program experience design cover</title>
+  <desc id="desc">A minimalist editorial cover for the Fotile mini program homepage redesign case.</desc>
+  <defs>
+    <clipPath id="boardClip">
+      <rect x="806" y="152" width="610" height="650" rx="0"/>
+    </clipPath>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#000000" flood-opacity="0.14"/>
+    </filter>
+    <linearGradient id="wash" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f6f3ed"/>
+      <stop offset="1" stop-color="#dfd9cf"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#wash)"/>
+  <path d="M92 96H1508V904H92Z" fill="none" stroke="#1b1b18" stroke-width="2"/>
+  <path d="M92 250H1508" stroke="#1b1b18" stroke-width="2"/>
+  <path d="M720 96V904" stroke="#1b1b18" stroke-width="2"/>
+  <text x="128" y="158" fill="#1b1b18" font-family="Arial, 'PingFang SC', sans-serif" font-size="42" font-weight="700" letter-spacing="0">NAMU DESIGN</text>
+  <text x="128" y="212" fill="#68645d" font-family="Arial, 'PingFang SC', sans-serif" font-size="24">Product Experience / High-fidelity Prototype</text>
+  <text x="756" y="158" fill="#1b1b18" font-family="Arial, 'PingFang SC', sans-serif" font-size="20" font-weight="700">FOTILE</text>
+  <text x="756" y="202" fill="#68645d" font-family="Arial, 'PingFang SC', sans-serif" font-size="18">Mini Program Homepage Redesign</text>
+  <g transform="translate(128 330)">
+    <text x="0" y="0" fill="#1b1b18" font-family="Arial, 'PingFang SC', sans-serif" font-size="86" font-weight="700">方太小程序</text>
+    <text x="0" y="102" fill="#1b1b18" font-family="Arial, 'PingFang SC', sans-serif" font-size="86" font-weight="700">首页体验改版</text>
+    <text x="0" y="174" fill="#3c3a36" font-family="Arial, 'PingFang SC', sans-serif" font-size="28">以产品体验设计重组首页信息、服务入口与高保真交互表达。</text>
+  </g>
+  <g transform="translate(128 690)" font-family="Arial, 'PingFang SC', sans-serif">
+    <rect x="0" y="0" width="168" height="48" fill="#1b1b18"/>
+    <text x="20" y="31" fill="#ffffff" font-size="18" font-weight="700">信息架构</text>
+    <rect x="184" y="0" width="168" height="48" fill="none" stroke="#1b1b18" stroke-width="1.5"/>
+    <text x="204" y="31" fill="#1b1b18" font-size="18" font-weight="700">服务入口</text>
+    <rect x="368" y="0" width="168" height="48" fill="none" stroke="#1b1b18" stroke-width="1.5"/>
+    <text x="388" y="31" fill="#1b1b18" font-size="18" font-weight="700">原型验证</text>
+  </g>
+  <g filter="url(#softShadow)">
+    <rect x="780" y="126" width="662" height="702" fill="#f8f6f1" stroke="#1b1b18" stroke-width="2"/>
+    <g clip-path="url(#boardClip)">
+      <image href="fotile-figma.png" x="806" y="152" width="610" height="650" preserveAspectRatio="xMidYMid slice"/>
+      <rect x="806" y="152" width="610" height="650" fill="#ebe5da" opacity="0.18"/>
+    </g>
+  </g>
+  <g transform="translate(780 852)" font-family="Arial, 'PingFang SC', sans-serif">
+    <text x="0" y="0" fill="#1b1b18" font-size="18" font-weight="700">SOURCE MATERIAL</text>
+    <text x="0" y="34" fill="#68645d" font-size="18">Public-facing composition based on existing Figma board.</text>
+  </g>
+</svg>

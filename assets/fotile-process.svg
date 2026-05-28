@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Fotile design process diagram</title>
+  <desc id="desc">A four-step process visual for the Fotile mini program redesign case.</desc>
+  <defs>
+    <clipPath id="thumbClip">
+      <rect x="1050" y="132" width="338" height="246"/>
+    </clipPath>
+  </defs>
+  <rect width="1600" height="1000" fill="#efebe4"/>
+  <rect x="80" y="76" width="1440" height="848" fill="none" stroke="#1a1a17" stroke-width="2"/>
+  <text x="120" y="154" fill="#1a1a17" font-family="Arial, 'PingFang SC', sans-serif" font-size="24" font-weight="700">FOTILE EXPERIENCE PROCESS</text>
+  <text x="120" y="224" fill="#1a1a17" font-family="Arial, 'PingFang SC', sans-serif" font-size="72" font-weight="700">从首页问题到可演示原型</text>
+  <text x="120" y="276" fill="#5f5a52" font-family="Arial, 'PingFang SC', sans-serif" font-size="24">把品牌展示、用户服务和业务入口放进同一条体验路径中验证。</text>
+  <g clip-path="url(#thumbClip)">
+    <image href="fotile-figma.png" x="1050" y="132" width="338" height="246" preserveAspectRatio="xMidYMid slice"/>
+    <rect x="1050" y="132" width="338" height="246" fill="#efebe4" opacity="0.28"/>
+  </g>
+  <rect x="1030" y="112" width="378" height="286" fill="none" stroke="#1a1a17" stroke-width="2"/>
+  <path d="M120 452H1480" stroke="#1a1a17" stroke-width="2"/>
+  <g font-family="Arial, 'PingFang SC', sans-serif">
+    <g transform="translate(120 512)">
+      <circle cx="0" cy="0" r="12" fill="#1a1a17"/>
+      <text x="0" y="64" fill="#1a1a17" font-size="44" font-weight="700">01 诊断入口</text>
+      <text x="0" y="112" fill="#403d38" font-size="22">识别首页承担的任务：</text>
+      <text x="0" y="146" fill="#403d38" font-size="22">品牌认知 / 售前 / 售后 / 会员。</text>
+      <rect x="0" y="194" width="260" height="82" fill="none" stroke="#1a1a17" stroke-width="1.5"/>
+      <text x="22" y="245" fill="#1a1a17" font-size="22" font-weight="700">任务优先级</text>
+    </g>
+    <g transform="translate(482 512)">
+      <circle cx="0" cy="0" r="12" fill="#1a1a17"/>
+      <text x="0" y="64" fill="#1a1a17" font-size="44" font-weight="700">02 重组结构</text>
+      <text x="0" y="112" fill="#403d38" font-size="22">按用户任务重新排列模块，</text>
+      <text x="0" y="146" fill="#403d38" font-size="22">减少运营内容之间的抢夺。</text>
+      <rect x="0" y="194" width="260" height="82" fill="#1a1a17"/>
+      <text x="22" y="245" fill="#ffffff" font-size="22" font-weight="700">首页信息层级</text>
+    </g>
+    <g transform="translate(844 512)">
+      <circle cx="0" cy="0" r="12" fill="#1a1a17"/>
+      <text x="0" y="64" fill="#1a1a17" font-size="44" font-weight="700">03 原型表达</text>
+      <text x="0" y="112" fill="#403d38" font-size="22">用高保真原型检查真实状态、</text>
+      <text x="0" y="146" fill="#403d38" font-size="22">入口反馈和页面节奏。</text>
+      <rect x="0" y="194" width="260" height="82" fill="none" stroke="#1a1a17" stroke-width="1.5"/>
+      <text x="22" y="245" fill="#1a1a17" font-size="22" font-weight="700">交互演示</text>
+    </g>
+    <g transform="translate(1206 512)">
+      <circle cx="0" cy="0" r="12" fill="#1a1a17"/>
+      <text x="0" y="64" fill="#1a1a17" font-size="44" font-weight="700">04 对齐决策</text>
+      <text x="0" y="112" fill="#403d38" font-size="22">让客户围绕接近真实使用的</text>
+      <text x="0" y="146" fill="#403d38" font-size="22">路径确认方案。</text>
+      <rect x="0" y="194" width="260" height="82" fill="none" stroke="#1a1a17" stroke-width="1.5"/>
+      <text x="22" y="245" fill="#1a1a17" font-size="22" font-weight="700">可验证交付</text>
+    </g>
+  </g>
+</svg>

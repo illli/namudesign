@@ -155,7 +155,7 @@ h1 {
   border-radius: 999px;
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.18)),
-    url("/assets/fotile-figma.png");
+    url("assets/fotile-figma.png");
   background-position: center;
   background-size: cover;
   filter: grayscale(1) contrast(1.2);
@@ -438,7 +438,7 @@ h2 {
   padding: 24px;
   background:
     linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.72)),
-    url("/assets/fotile-figma.png");
+    url("assets/fotile-figma.png");
   background-position: center;
   background-size: cover;
   color: #fff;
@@ -449,19 +449,19 @@ h2 {
 .accordion-item:nth-child(2) {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.74)),
-    url("/assets/lv-figma.png");
+    url("assets/lv-figma.png");
 }
 
 .accordion-item:nth-child(3) {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.74)),
-    url("/assets/fotile-figma.png");
+    url("assets/fotile-figma.png");
 }
 
 .accordion-item:nth-child(4) {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.74)),
-    url("/assets/lv-figma.png");
+    url("assets/lv-figma.png");
 }
 
 .accordion-item:hover {
@@ -611,6 +611,10 @@ h2 {
   min-height: 280px;
   object-fit: cover;
   background: var(--soft);
+}
+
+.case-gallery img {
+  aspect-ratio: 16 / 10;
 }
 
 .gallery-panel {
