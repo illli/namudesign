@@ -52,3 +52,27 @@
 - Post-fix evidence：`qa/footer-controls-after.png` 显示亮色月亮；`qa/footer-controls-dark-after.png` 显示暗色太阳。8 个页面在 4 个断点均无溢出、重叠或破图。
 
 final result: passed
+
+---
+
+# Design QA：全站系统字体栈
+
+**Findings**
+
+- 无遗留 P0/P1/P2 问题。全站已统一使用用户指定的系统字体栈，英文长标签与中文正文均无裁切。
+
+**Implementation Checklist**
+
+- [x] `--font-sans` 与 `--font-mono` 的字体顺序与用户说明一致。
+- [x] 正文、首页标题、能力标签和案例标题均复用同一 sans 变量。
+- [x] 头部 Logo 与 INFO 图片字形、字号、行高和页面结构未改变。
+- [x] 检查 8 个中英文页面及 375/532/768/1100/1280 CSS px。
+
+## Evidence
+
+- 英文首页 532 × 766：标题换行自然，作品区位置稳定。
+- 中文 Info 375 × 766：正文无异常断行或裁切。
+- 40 个路由/视口组合：0 个横向溢出、0 个破图、0 个能力标签裁切。
+- Console errors checked：是，0 条。
+
+final result: passed
