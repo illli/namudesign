@@ -24,6 +24,7 @@
 - `https://namu.design` 已上线；HTTP、`www` 均跳转至 HTTPS 主域名，8 个页面、sitemap、robots、静态资源缓存与 404 已通过公网检查。
 - Let's Encrypt ECDSA 证书覆盖 `namu.design` 与 `www.namu.design`，有效期至 2026-11-30；续期定时器已启用。
 - 生产移动端浏览器复核通过：中英文、主题切换、案例链接、Info 客户 Logo 与双列服务卡片正常，控制台无 warning/error。
+- 首页能力区已补回中间桌面宽度的页面 gutter；1081px 下卡片区与页脚地址均从 50px 起始，768/1280 原布局保持不变。
 
 ## 下一步
 
