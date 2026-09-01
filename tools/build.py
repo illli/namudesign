@@ -94,7 +94,18 @@ def render_home(page: dict, locale: dict, routes: dict) -> str:
         home_gallery_item(image, routes, locale["locale"], duplicate=True)
         for image in page["images"]
     )
-    tags = "\n".join(f"        <li>{esc(item)}</li>" for item in page["tags"])
+    capabilities = "\n".join(
+        "\n".join(
+            [
+                '        <li class="capability-card">',
+                f'          <h2>{esc(item["name"])}</h2>',
+                f'          <p>{esc(item["description"])}</p>',
+                '          <img class="capability-card-arrow" src="/assets/icons/arrow-right.svg" alt="" aria-hidden="true">',
+                "        </li>",
+            ]
+        )
+        for item in page["capabilities"]
+    )
     return template("home.html").format(
         eyebrow=esc(page["eyebrow"]),
         heading=esc(page["heading"]),
@@ -102,7 +113,8 @@ def render_home(page: dict, locale: dict, routes: dict) -> str:
         work_label=esc(locale["labels"]["work"]),
         gallery_html=gallery,
         gallery_duplicate_html=gallery_duplicate,
-        tags_html=tags,
+        capabilities_label=esc(page["capabilities_label"]),
+        capabilities_html=capabilities,
     )
 
 

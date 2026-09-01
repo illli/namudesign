@@ -11,7 +11,7 @@
       "title": "NAMU DESIGN｜品牌体验设计工作室",
       "description": "NAMU DESIGN 是一家品牌体验设计公司，为品牌打造数字体验、互动与视觉设计。",
       "eyebrow": "NAMU DESIGN",
-      "heading": "NAMUDESIGN 是一家品牌体验设计公司，\n我们为顶尖品牌打造极致体验。",
+      "heading": "NAMUDESIGN 是一家品牌体验设计公司，我们为顶尖品牌打造极致体验。",
       "intro": "从产品策略、概念与品牌设计，到数字体验、营销物料与动态视觉。",
       "images": [
         {"src": "/assets/images/fotile/case-01-01.png", "alt": "方太品牌传播设计合集", "route": "fotile", "link_label": "查看方太品牌传播设计合集"},
@@ -19,7 +19,13 @@
         {"src": "/assets/images/home/home-03.png", "alt": "NAMU DESIGN 移动端体验设计"},
         {"src": "/assets/images/home/home-04.png", "alt": "NAMU DESIGN 交互体验项目"}
       ],
-      "tags": ["品牌设计", "概念设计", "体验设计", "GEO", "营销物料", "3D 视频"]
+      "capabilities_label": "服务能力",
+      "capabilities": [
+        {"name": "品牌", "description": "从标识到完整的设计系统，我们设计能伴随业务长期成长的品牌。"},
+        {"name": "产品", "description": "从 App 到平台，再到复杂业务界面，我们设计人们每天都会用到的产品。"},
+        {"name": "网站", "description": "从落地页到产品故事，我们设计让人愿意读完的产品叙事。"},
+        {"name": "开发", "description": "从设计到上线部署，我们也负责开发、交付与性能打磨，让产品稳定运行。"}
+      ]
     },
     "info": {
       "template": "info",

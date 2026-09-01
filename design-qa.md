@@ -55,6 +55,55 @@ final result: passed
 
 ---
 
+# Design QA：首页服务能力卡片与局部排版
+
+**Findings**
+
+- 无遗留 P0/P1/P2 问题。服务卡片保留参考图的信息层级，并按 NAMU 现有线框视觉与页面宽度完成响应式适配。
+
+**Open Questions**
+
+- 4 个箭头当前是非交互视觉提示；待用户提供对应目标页面后再升级为链接。
+
+**Implementation Checklist**
+
+- [x] 中文首页标题移除硬编码换行，窄屏自然折行。
+- [x] 品牌、产品、网站、开发 4 张卡片含标题、说明与官方线性箭头。
+- [x] 桌面 4 列、平板 2 列、手机 1 列。
+- [x] 页脚语言与主题图标间距为 40px。
+- [x] 检查中英文、亮暗模式、375/532/768/1100/1280 CSS px。
+
+## Evidence
+
+- Source visual truth：用户本轮附加的 4 卡片参考图，原始 2760 × 410 px；会话预览归一化为 2048 × 304 px。
+- Implementation：浏览器本轮捕获的中文首页 1280 × 800 与 532 × 766 CSS px 视图。
+- State：中文首页，亮色与暗色；另回归英文首页及全部 8 个页面页脚。
+- Full-view comparison：参考图为超宽四列；实现桌面保持四列与相同标题/说明/右下箭头层级，并将填充卡片适配为 NAMU 现有 1px 线框。
+- Focused region comparison：桌面卡片区与移动端单列卡片区均已单独目视检查；标题、说明、箭头、边框与间距清晰可读。
+- Primary interactions tested：语言切换保留；主题切换后边框、文字与箭头均正确反色；箭头无虚假交互。
+- Console errors checked：是，0 条。
+
+## Required fidelity surfaces
+
+- Fonts and typography：沿用用户指定系统字体栈；标题 27/24px、正文 16/15px，卡片内无裁切。
+- Spacing and layout rhythm：桌面 4 列、平板 2 列、手机 1 列；卡片内为上标题、中说明、右下箭头。
+- Colors and visual tokens：沿用 `--color-line`、`--color-muted` 与亮暗模式现有 token，不复制参考图灰色填充。
+- Image quality and asset fidelity：箭头来自 Heroicons 24px outline 官方矢量资产；无文本符号、CSS 图形或手绘 SVG。
+- Copy and content：中英文均为品牌、产品、网站、开发四类；中文内容与参考图一致。
+
+## Comparison history
+
+- Earlier P2：首页仍为 6 个短标签，无法承载参考图的服务说明层级。
+- Fix：重构为 4 张标题、说明、箭头卡片，并增加中英文内容模型。
+- Post-fix evidence：1280 桌面四列、768 平板两列、375/532 手机单列，无内容裁切或横向溢出。
+- Earlier P2：中文标题在内容数据中强制断行，532px 出现不自然的 3 行结构；页脚实际间距被高优先级规则压回 7px。
+- Fix：删除硬换行并按自然宽度排版；提高页脚控制规则优先级并设为 40px。
+- Post-fix evidence：532px 标题为自然 2 行；页脚实测语言链接与主题按钮间距 40px。
+
+final result: passed
+
+---
+
 # Design QA：全站系统字体栈
 
 **Findings**
@@ -74,5 +123,14 @@ final result: passed
 - 中文 Info 375 × 766：正文无异常断行或裁切。
 - 40 个路由/视口组合：0 个横向溢出、0 个破图、0 个能力标签裁切。
 - Console errors checked：是，0 条。
+
+final result: passed
+
+---
+
+## Current build gate
+
+- Latest report：`首页服务能力卡片与局部排版`。
+- Required browser evidence、responsive checks、theme checks and console checks are recorded above.
 
 final result: passed
