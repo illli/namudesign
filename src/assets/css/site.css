@@ -1079,6 +1079,19 @@ body[data-page="farfetch"] .nav-info-case {
   line-height: 28px;
 }
 
+@media (min-width: 1024px) {
+  html[lang="en"] .capability-list {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  html[lang="en"] .capability-list li {
+    padding-inline: 6px;
+    font-size: 18px;
+    white-space: nowrap;
+  }
+}
+
 .info-page {
   padding-top: 142px;
 }
@@ -1367,6 +1380,15 @@ body[data-page="farfetch"] .nav-info-case {
 
   .footer-controls {
     justify-content: flex-end;
+  }
+}
+
+@media (max-width: 640px) {
+  html[lang="en"] .capability-list li {
+    height: 78px;
+    padding: 10px 6px;
+    display: grid;
+    place-items: center;
   }
 }
 
