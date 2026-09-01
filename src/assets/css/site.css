@@ -502,7 +502,7 @@ body[data-page="farfetch"] .brand img {
   color: var(--color-muted);
 }
 
-.team-row--zh {
+.team-row--localized {
   grid-template-columns: 1fr 2.5fr;
 }
 

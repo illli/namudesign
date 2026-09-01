@@ -124,11 +124,11 @@ def render_info(page: dict, locale_name: str) -> str:
                 "        </section>",
             ]
         )
-    team_role_keys = ("role_zh",) if locale_name == "zh" else ("role_zh", "role_en")
+    team_role_keys = ("role_zh",) if locale_name == "zh" else ("role_en",)
     team_rows = "\n".join(
         "\n".join(
             [
-                f'            <li class="team-row{" team-row--zh" if locale_name == "zh" else ""}">',
+                '            <li class="team-row team-row--localized">',
                 f'              <strong>{esc(member["name"])}</strong>',
                 *(f'              <span>{esc(member[key])}</span>' for key in team_role_keys),
                 "            </li>",

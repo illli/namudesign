@@ -1,44 +1,50 @@
-# NAMU DESIGN 设计验收
+# Design QA：英文团队职位纯英文
 
-## 对照目标
+**Findings**
 
-- 用户标注：英文版页脚地址中不应出现中文地址。
-- 视觉真值：修复前浏览器复现 `qa/en-footer-address-before.png`，517 × 744 px；用户要求删除其中第一行中文地址。
-- 实现页面：`http://127.0.0.1:8000/en/`、`/en/info/`、`/en/work/fotile/`、`/en/work/farfetch-china/`。
-- 状态：英文页面、亮色模式、页脚地址区域。
+- 无遗留 P0/P1/P2 问题。英文团队名单已从“英文姓名 + 中文职位 + 英文职位”调整为“英文姓名 + 英文职位”。
 
-## 对照证据
+**Open Questions**
 
-- 同屏对照：`qa/en-footer-address-comparison.png`，1034 × 744 px；左侧为修复前，右侧为修复后。
-- 修复后实现：`qa/en-footer-address-after.png`，532 × 766 CSS 视口，设备像素比 1，浏览器内容截图为 517 × 744 px。
-- 两张截图使用相同视口、主题、滚动区域与像素尺寸，直接并排比较，无密度缩放。
-- 地址文字在全图中清晰可读，因此不需要额外聚焦裁切。
+- 无。
 
-## Findings
+**Implementation Checklist**
 
-- 无剩余 P0、P1 或 P2 差异。
-- 字体与排版：地址继续使用现有 Source Sans 3、24px 和 1.5 行高；删除中文行后英文两行自然上移，没有留下空行。
-- 间距与布局：ADDRESS、PHONE、CONTACT、语言/主题入口及版权的网格和间距未修改；页脚高度随内容自然收拢。
-- 色彩：文字、背景和分隔关系未修改，继续使用现有亮暗主题变量。
-- 图片：本次不涉及图片或图标资产。
-- 文案：英文版只保留 `No. 1, Lane 1610, Middle HuaihaiRoad, / Xuhui District, Shanghai, China`；中文版只保留 `上海市徐汇区淮海中路1610弄1号`。
+- [x] 英文 Info 的 8 条团队信息只输出英文姓名与英文职位。
+- [x] 中文 Info 继续只输出中文姓名与中文职位。
+- [x] 检查 375、532、1100 CSS px 三档，无团队行或页面横向溢出。
+- [x] 检查浏览器控制台，无错误。
 
-## 响应式与交互验证
+**Follow-up Polish**
 
-- 英文首页、Info、方太案例、FARFETCH 案例 4 个路由均不再包含中文地址。
-- 375、532、1100 CSS 视口均无横向溢出，英文地址保持两行或按容器自然换行。
-- 中文首页回归通过：无英文地址，中文地址保持不变。
-- 电话、邮箱、语言切换和主题切换结构未改变。
-- 浏览器日志无 error 或 warning；`make check` 通过。
+- 无。
+
+## Evidence
+
+- Source visual truth：`qa/en-team-roles-before.png`
+- Implementation：`qa/en-team-roles-after-desktop.png`
+- Mobile implementation：`qa/en-team-roles-after.png`
+- Full-view comparison：`qa/en-team-roles-comparison.png`
+- Viewport：桌面 1280 × 734 CSS px；移动端 532 × 766 CSS px；另验证 375 与 1100 CSS px。
+- Pixel dimensions：source 1265 × 712 px；desktop implementation 1265 × 725 px（对比图裁切至 1265 × 712 px）；mobile implementation 517 × 744 px。
+- Density normalization：浏览器 device scale factor 1；桌面对比保持同宽并只裁切实现图底部 13 px，未缩放文字或布局。
+- State：英文 `/en/info/`，页面滚动到 Team 区；中文版 `/zh/info/` 用于语言回归。
+- Primary interactions tested：页面导航、滚动至团队区、三档响应式重排。
+- Console errors checked：是，0 条。
+- Focused region comparison：本次目标仅为 Team 区内容与列结构；全视图对比中的文字清晰可读，无需额外裁切。
+
+## Required fidelity surfaces
+
+- Fonts and typography：字体、字号、字重、行高未改；只移除不属于英文版的中文职位。
+- Spacing and layout rhythm：英文桌面由三列回归两列，沿用中文版既有 1fr/2.5fr 网格；移动端保持单列顺序，无溢出。
+- Colors and visual tokens：未改颜色、边框或主题 token；亮暗模式逻辑不受影响。
+- Image quality and asset fidelity：本次未改任何图片或素材。
+- Copy and content：英文版 8 条职位均为英文且无 CJK 字符；中文版 8 条仍为中文姓名与中文职位。
 
 ## Comparison history
 
-1. [P2] 修复前英文版页脚同时显示中英文地址，与当前语言状态不一致。
-2. 修复：英文构建分支只输出两行英文地址；中文构建分支继续只输出中文地址。
-3. 修复后同视口并排复核，并检查 4 个英文路由、3 个响应式尺寸与中文回归；无剩余 P0/P1/P2 差异。
-
-## Follow-up polish
-
-- 无。本轮仅删除英文版的中文地址，不改动页脚其他内容。
+- Earlier P2：英文 Team 行混入中文职位，造成同一语言页面内信息重复，并在移动端形成三行内容。
+- Fix：构建器英文角色字段从 `role_zh + role_en` 改为仅 `role_en`，团队行统一使用本地化两列布局。
+- Post-fix evidence：`qa/en-team-roles-comparison.png` 右侧显示所有中文职位已移除；375/532/1100 DOM 检查中每行均为 2 个子项、CJK 行数为 0、横向溢出为 0。
 
 final result: passed
