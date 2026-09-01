@@ -68,10 +68,31 @@ def image_figure(image: dict, class_name: str, eager: bool = False) -> str:
     )
 
 
-def render_home(page: dict, locale: dict) -> str:
+def home_gallery_item(image: dict, routes: dict, locale_name: str, duplicate: bool) -> str:
+    alt = "" if duplicate else esc(image["alt"])
+    image_html = (
+        f'<img src="{esc(image["src"])}" alt="{alt}" loading="eager" '
+        'fetchpriority="high">'
+    )
+    if route_key := image.get("route"):
+        tabindex = ' tabindex="-1"' if duplicate else ""
+        label = "" if duplicate else f' aria-label="{esc(image["link_label"])}"'
+        return (
+            f'            <a class="home-gallery-item home-gallery-link" '
+            f'href="{esc(routes[route_key][locale_name])}"{label}{tabindex}>'
+            f"{image_html}</a>"
+        )
+    return f'            <figure class="home-gallery-item is-placeholder">{image_html}</figure>'
+
+
+def render_home(page: dict, locale: dict, routes: dict) -> str:
     gallery = "\n".join(
-        image_figure(image, "home-gallery-item", eager=index == 0)
-        for index, image in enumerate(page["images"])
+        home_gallery_item(image, routes, locale["locale"], duplicate=False)
+        for image in page["images"]
+    )
+    gallery_duplicate = "\n".join(
+        home_gallery_item(image, routes, locale["locale"], duplicate=True)
+        for image in page["images"]
     )
     tags = "\n".join(f"        <li>{esc(item)}</li>" for item in page["tags"])
     return template("home.html").format(
@@ -80,6 +101,7 @@ def render_home(page: dict, locale: dict) -> str:
         intro=esc(page["intro"]),
         work_label=esc(locale["labels"]["work"]),
         gallery_html=gallery,
+        gallery_duplicate_html=gallery_duplicate,
         tags_html=tags,
     )
 
@@ -199,7 +221,7 @@ def build() -> None:
             route = site["routes"][page_key][locale_name]
             work_url = site["routes"]["home"][locale_name] + "#work"
             if page["template"] == "home":
-                body = render_home(page, locale)
+                body = render_home(page, locale, site["routes"])
             elif page["template"] == "info":
                 body = render_info(page)
             elif page["template"] == "case-study":

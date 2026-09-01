@@ -69,4 +69,24 @@
     }
   });
 
+  document.querySelectorAll(".home-gallery").forEach(function (gallery) {
+    var resumeTimer = null;
+
+    function pauseMotion() {
+      window.clearTimeout(resumeTimer);
+      gallery.classList.add("is-interacting");
+    }
+
+    function resumeMotion() {
+      window.clearTimeout(resumeTimer);
+      resumeTimer = window.setTimeout(function () {
+        gallery.classList.remove("is-interacting");
+      }, 240);
+    }
+
+    gallery.addEventListener("pointerdown", pauseMotion, { passive: true });
+    gallery.addEventListener("pointerup", resumeMotion, { passive: true });
+    gallery.addEventListener("pointercancel", resumeMotion, { passive: true });
+  });
+
 })();

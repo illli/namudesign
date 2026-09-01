@@ -1,11 +1,20 @@
-      <section class="home-hero" aria-labelledby="page-title">
-        <p class="eyebrow">{eyebrow}</p>
-        <h1 id="page-title">{heading}</h1>
-        <p class="intro">{intro}</p>
-      </section>
-      <section class="home-gallery" aria-label="{work_label}">
+      <div class="home-stage">
+        <section class="home-hero" aria-labelledby="page-title">
+          <p class="eyebrow">{eyebrow}</p>
+          <h1 id="page-title">{heading}</h1>
+          <p class="intro">{intro}</p>
+        </section>
+        <section class="home-gallery" aria-label="{work_label}">
+          <div class="home-gallery-track">
+            <div class="home-gallery-set">
 {gallery_html}
-      </section>
+            </div>
+            <div class="home-gallery-set" aria-hidden="true">
+{gallery_duplicate_html}
+            </div>
+          </div>
+        </section>
+      </div>
       <ul class="capability-list" aria-label="Capabilities">
 {tags_html}
       </ul>
