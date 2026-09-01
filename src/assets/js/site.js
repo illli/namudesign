@@ -68,6 +68,32 @@
     }
   });
 
+  document.querySelectorAll(".media-placeholder .media-image").forEach(function (image) {
+    var placeholder = image.closest(".media-placeholder");
+
+    function showImage() {
+      placeholder.classList.remove("is-media-error");
+      placeholder.classList.add("is-media-loaded");
+    }
+
+    function keepPlaceholder() {
+      placeholder.classList.remove("is-media-loaded");
+      placeholder.classList.add("is-media-error");
+    }
+
+    if (image.complete) {
+      if (image.naturalWidth > 0) {
+        showImage();
+      } else {
+        keepPlaceholder();
+      }
+      return;
+    }
+
+    image.addEventListener("load", showImage, { once: true });
+    image.addEventListener("error", keepPlaceholder, { once: true });
+  });
+
   document.querySelectorAll(".home-gallery").forEach(function (gallery) {
     var resumeTimer = null;
 

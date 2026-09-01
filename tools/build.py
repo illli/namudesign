@@ -63,7 +63,7 @@ def image_figure(image: dict, class_name: str, eager: bool = False) -> str:
     loading = "eager" if eager else "lazy"
     priority = ' fetchpriority="high"' if eager else ""
     return (
-        f'        <figure class="{class_name}"><img src="{esc(image["src"])}" '
+        f'        <figure class="{class_name} media-placeholder"><img class="media-image" src="{esc(image["src"])}" '
         f'alt="{esc(image["alt"])}" loading="{loading}"{priority}></figure>'
     )
 
@@ -71,18 +71,18 @@ def image_figure(image: dict, class_name: str, eager: bool = False) -> str:
 def home_gallery_item(image: dict, routes: dict, locale_name: str, duplicate: bool) -> str:
     alt = "" if duplicate else esc(image["alt"])
     image_html = (
-        f'<img src="{esc(image["src"])}" alt="{alt}" loading="eager" '
+        f'<img class="media-image" src="{esc(image["src"])}" alt="{alt}" loading="eager" '
         'fetchpriority="high">'
     )
     if route_key := image.get("route"):
         tabindex = ' tabindex="-1"' if duplicate else ""
         label = "" if duplicate else f' aria-label="{esc(image["link_label"])}"'
         return (
-            f'            <a class="home-gallery-item home-gallery-link" '
+            f'            <a class="home-gallery-item home-gallery-link media-placeholder" '
             f'href="{esc(routes[route_key][locale_name])}"{label}{tabindex}>'
             f"{image_html}</a>"
         )
-    return f'            <figure class="home-gallery-item is-placeholder">{image_html}</figure>'
+    return f'            <figure class="home-gallery-item is-placeholder media-placeholder">{image_html}</figure>'
 
 
 def render_home(page: dict, locale: dict, routes: dict) -> str:

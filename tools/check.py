@@ -153,6 +153,14 @@ def check(allow_missing_assets: bool) -> tuple[list[str], list[str]]:
         for image in parser.images:
             if "alt" not in image:
                 errors.append(f"{label}: image missing alt attribute: {image.get('src', '')}")
+            src = image.get("src", "").split("?", 1)[0]
+            is_content_image = (
+                src.startswith("/assets/images/fotile/")
+                or src.startswith("/assets/images/farfetch-china/")
+                or src == "/assets/images/info/studio.png"
+            )
+            if is_content_image and "media-image" not in image.get("class", "").split():
+                errors.append(f"{label}: content image missing loading placeholder: {src}")
         for tag, url in parser.resources:
             if any(marker in url.lower() for marker in FORBIDDEN_HOST_MARKERS):
                 errors.append(f"{label}: forbidden remote dependency: {url}")

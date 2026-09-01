@@ -97,6 +97,21 @@ img {
   height: auto;
 }
 
+.media-placeholder {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-panel);
+}
+
+.media-placeholder .media-image {
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.media-placeholder.is-media-loaded .media-image {
+  opacity: 1;
+}
+
 figure,
 h1,
 h2,

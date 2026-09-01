@@ -35,3 +35,4 @@
 - 生产站点采用 `/var/www/namu/releases/<版本号>` 加 `/var/www/namu/current` 软链接；首个正式版本为 `20260902000254-ce38981`。
 - Nginx 统一将 HTTP 与 `www` 跳转至 `https://namu.design`；ACME challenge 路径保留为 HTTP webroot，证书由 Certbot 定时续期。
 - TLS 配置使用 Nginx 新式 `http2 on;` 指令，避免旧式 `listen ... http2` 警告。
+- 首页作品、工作室大图和案例图片统一使用主题面板色占位；成功后淡入、失败时保留占位。品牌字标、导航与客户 Logo 不套用该背景。
