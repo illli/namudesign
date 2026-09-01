@@ -35,14 +35,14 @@
       "studio_image": {"src": "/assets/images/info/studio.png", "alt": "NAMU DESIGN 上海工作室"},
       "team_heading": "团队",
       "team": [
-        {"name": "周展宇", "role_zh": "客户经理", "role_en": "Account Manager"},
-        {"name": "潘梦雨", "role_zh": "美术指导", "role_en": "Creative Director"},
-        {"name": "马文超", "role_zh": "美术指导", "role_en": "Creative Director"},
-        {"name": "吕天宇", "role_zh": "UIUX 设计师", "role_en": "Art Director"},
-        {"name": "李江南", "role_zh": "三维与动态设计师", "role_en": "3D & Motion Designer"},
-        {"name": "钟秋月", "role_zh": "高级设计师", "role_en": "Senior Designer"},
-        {"name": "熊文梅", "role_zh": "运营经理", "role_en": "Operations Manager"},
-        {"name": "左定明", "role_zh": "运营经理", "role_en": "Operations Manager"}
+        {"name": "周展宇", "role_zh": "客户经理", "role_en": "Account Manager", "portrait": "/assets/images/info/team/zhou-zhanyu.png"},
+        {"name": "潘梦雨", "role_zh": "美术指导", "role_en": "Creative Director", "portrait": "/assets/images/info/team/pan-mengyu.png"},
+        {"name": "马文超", "role_zh": "美术指导", "role_en": "Creative Director", "portrait": "/assets/images/info/team/ma-wenchao.png"},
+        {"name": "吕天宇", "role_zh": "UIUX 设计师", "role_en": "Art Director", "portrait": "/assets/images/info/team/lyu-tianyu.png"},
+        {"name": "李江南", "role_zh": "三维与动态设计师", "role_en": "3D & Motion Designer", "portrait": "/assets/images/info/team/li-jiangnan.png"},
+        {"name": "钟秋月", "role_zh": "高级设计师", "role_en": "Senior Designer", "portrait": "/assets/images/info/team/zhong-qiuyue.png"},
+        {"name": "熊文梅", "role_zh": "运营经理", "role_en": "Operations Manager", "portrait": "/assets/images/info/team/xiong-wenmei.png"},
+        {"name": "左定明", "role_zh": "运营经理", "role_en": "Operations Manager", "portrait": "/assets/images/info/team/zuo-dingming.png"}
       ],
       "client_statement": "我们服务少量行业头部公司，为他们创造独特且具有颠覆性的线上用户体验，驱动变革与增长。",
       "clients_heading": "客户",

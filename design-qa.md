@@ -261,7 +261,47 @@ final result: passed
 
 ## Current build gate
 
-- Latest report：`Info 移动端 Logo 与服务内容同步`。
+- Latest report：`Info 团队头像卡片`。
 - Browser-rendered screenshots、responsive checks、content parity、theme and console checks are recorded above.
+
+final result: passed
+
+---
+
+## Design QA：Info 团队头像卡片
+
+**Findings**
+
+- 无遗留 P0/P1/P2 问题。原文字分隔列表已按参考图改为 8 人头像卡片网格，并保留既有姓名与职位本地化规则。
+
+**Implementation Checklist**
+
+- [x] 8 张用户原图按成员身份映射，输出为正方形头像并保留人物主体。
+- [x] 768px 起四列，767px 以下双列；卡片由头像、姓名、职位组成。
+- [x] 头像复用全站加载占位、渐显和失败隐藏规则。
+- [x] 检查 375/736/1100/1280，中英文与亮暗模式。
+
+## Evidence
+
+- Source visual truth：用户本轮附加的团队参考图，目标结构为标题下 4 × 2 头像、姓名、职位卡片（对话附件，无本地文件路径）。
+- Implementation：本轮浏览器实测中文 Info 团队区；1146 × 766 CSS px 下为 4 × 2，736 × 766 下为双列。
+- Source portrait files：`/Users/a11/Desktop/头像/1.png` 至 `8.png`，均为 800 × 800 RGBA PNG；构建后 8 张自然尺寸仍为 800 × 800。
+- Responsive evidence：375px 两列各 156px；736px 两列各 334.5px；1100px 四列各 195.25px；1280px 四列各 224px，四档横向溢出均为 0。
+- Localization：中文只显示中文姓名与中文职位；英文显示“中文姓名＋既有英文名/昵称”及英文职位，8 人完整无裁切。
+- Loading state：8 张头像均带 `media-placeholder` 与 `media-image`，构建检查已覆盖团队资源路径；正常加载时 8/8 成功。
+
+## Required fidelity surfaces
+
+- Fonts and typography：沿用现有系统 sans 字体、300 字重；姓名 16/15px、职位 14/13px，层级和参考图一致。
+- Spacing and layout rhythm：桌面 68px 列间距与 42px 行间距，移动端 12px 列间距与 30px 行间距；标题与网格保持清晰留白。
+- Colors and visual tokens：文字、弱文字、背景与占位均复用现有亮暗主题 token。
+- Image quality and asset fidelity：使用用户提供的 800 × 800 原图，无二次生成、压缩或拉伸；仅以 `object-fit: cover` 保持统一方形卡片。
+- Copy and content：本轮不改成员姓名、昵称或职位，只替换展示结构并添加对应头像。
+
+## Comparison history
+
+- Earlier P1：团队区只有文字行与分隔线，没有用户参考图中的人物视觉识别和卡片节奏。
+- Fix：加入 8 张头像，列表改为响应式卡片网格，并接入统一图片加载状态。
+- Post-fix evidence：1146px 视图呈现完整 4 × 2 阵列，375/736px 自动转双列；所有头像加载、文字完整且无溢出。
 
 final result: passed

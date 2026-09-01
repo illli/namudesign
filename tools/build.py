@@ -140,6 +140,9 @@ def render_info(page: dict, locale_name: str, capabilities: list[dict]) -> str:
         "\n".join(
             [
                 '            <li class="team-row team-row--localized">',
+                '              <figure class="team-portrait media-placeholder">',
+                f'                <img class="media-image" src="{esc(member["portrait"])}" alt="{esc(member["name"])}" loading="lazy" width="800" height="800">',
+                "              </figure>",
                 f'              <strong>{esc(member["name"])}</strong>',
                 *(f'              <span>{esc(member[key])}</span>' for key in team_role_keys),
                 "            </li>",

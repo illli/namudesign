@@ -157,6 +157,7 @@ def check(allow_missing_assets: bool) -> tuple[list[str], list[str]]:
             is_content_image = (
                 src.startswith("/assets/images/fotile/")
                 or src.startswith("/assets/images/farfetch-china/")
+                or src.startswith("/assets/images/info/team/")
                 or src == "/assets/images/info/studio.png"
             )
             if is_content_image and "media-image" not in image.get("class", "").split():
