@@ -233,3 +233,24 @@
 - Info 服务列表改用首页同一 `capabilities` 内容源和 `capability-card` 样式；中英文四项文本逐项比对完全一致。
 - 375/532/768/1100/1280 两种语言共 10 个组合均为 0 横向溢出、6 个 Logo 正常加载、4 张卡片无裁切；1100px 客户区原有 15px 溢出同步修正。
 - 中文 532px 亮暗模式均通过，控制台 0 条 warning/error。
+
+## 正式发布 namu.design
+
+- [ ] 只读核查域名解析、SSH 连接、服务器系统、Nginx 与现有站点目录
+- [ ] 在服务器创建带时间戳的版本目录并保留现网回滚点
+- [ ] 仅上传本地已验证的 `dist/`，安装并验证 Nginx 配置
+- [ ] 启用 HTTPS 与 www 跳转，验证 8 个页面、静态资源、缓存和 404
+- [ ] 更新发布记录，执行最终 `make check` 并提交
+
+### 成功标准
+
+- `https://namu.design` 和 `https://www.namu.design` 从公网可访问，HTTP 正确跳转 HTTPS。
+- 中文、英文、Info 与两个案例页均返回正确页面，资源无 404，主题与语言切换可用。
+- 服务器保留可识别的上一版本或备份，出现问题时可恢复。
+
+### 当前核查结果
+
+- 公共 DNS-over-HTTPS：`namu.design`、`www.namu.design` → `81.69.160.64`，TTL 600 秒。
+- 服务器 22 端口可达，SSH banner 为 OpenSSH 9.3；HTTP 端口当前返回空响应，HTTPS 尚未建立。
+- `xiaoming.pem` 已用 0600 临时副本测试；`root`、`ubuntu`、`xiaoming`、`lighthouse`、`centos`、`debian`、`ec2-user`、`admin`、`cloud-user`、`rocky`、`fedora`、`almalinux` 均返回 `Permission denied (publickey,...)`。
+- 发布在任何服务器写入前停止；需要确认自定义 SSH 用户名，或重新为该实例绑定对应公钥。
