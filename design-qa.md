@@ -289,6 +289,7 @@ final result: passed
 - Responsive evidence：375px 两列各 156px；736px 两列各 334.5px；1100px 四列各 195.25px；1280px 四列各 224px，四档横向溢出均为 0。
 - Localization：中文只显示中文姓名与中文职位；英文显示“中文姓名＋既有英文名/昵称”及英文职位，8 人完整无裁切。
 - Loading state：8 张头像均带 `media-placeholder` 与 `media-image`，构建检查已覆盖团队资源路径；正常加载时 8/8 成功。
+- Production evidence：正式版本 `20260902020536-7a38476`；中文 736px 双列、1146px 四列，英文 375px 双列，三档均无横向溢出；滚动触发懒加载后 8/8 头像自然尺寸为 800 × 800。
 
 ## Required fidelity surfaces
 
