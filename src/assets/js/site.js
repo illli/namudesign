@@ -26,7 +26,6 @@
 
     if (themeToggle) {
       themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
-      themeToggle.querySelector("span").textContent = theme === "dark" ? "LIGHT" : "DARK";
     }
   }
 

@@ -16,7 +16,7 @@
     <meta property="og:description" content="{page_description}">
     <meta property="og:url" content="{canonical_url}">
     <script src="/assets/js/theme-init.js"></script>
-    <link rel="stylesheet" href="/assets/css/site.css?v=20260901d">
+    <link rel="stylesheet" href="/assets/css/site.css?v=20260901e">
   </head>
   <body data-page="{page_key}">
     <a class="skip-link" href="#main">{skip_label}</a>
@@ -46,9 +46,12 @@
       <p class="footer-copyright">© {year} {brand_compact}</p>
       <div class="footer-controls">
         <a href="{other_locale_url}" lang="{other_html_lang}" hreflang="{other_html_lang}">{other_language_name}</a>
-        <button class="theme-toggle" type="button" aria-label="{theme_label}" aria-pressed="false"><span aria-hidden="true">DARK</span></button>
+        <button class="theme-toggle" type="button" aria-label="{theme_label}" aria-pressed="false">
+          <img class="theme-icon theme-icon--moon" src="/assets/icons/moon.svg" alt="" aria-hidden="true">
+          <img class="theme-icon theme-icon--sun" src="/assets/icons/sun.svg" alt="" aria-hidden="true">
+        </button>
       </div>
     </footer>
-    <script src="/assets/js/site.js" defer></script>
+    <script src="/assets/js/site.js?v=20260901a" defer></script>
   </body>
 </html>
