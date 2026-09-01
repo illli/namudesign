@@ -1,39 +1,45 @@
 # NAMU DESIGN 设计验收
 
-## Source of truth
+## 对照目标
 
-- Figma：首页 `119:213`、Info `117:2`、方太 `185:2`、FARFETCH China `185:178`
-- 参考截图：`design-reference/home.png`、`info.png`、`fotile.png`、`farfetch-china.png`
-- 实现：`dist/` 静态站点
+- 视觉真值：`design-reference/home.png`，1100 × 1562 px，Figma 首页 `119:213`
+- 实现页面：`http://127.0.0.1:8000/zh/`
+- 状态：中文、亮色模式、桌面版
+- CSS 视口：1100 × 866，device scale factor 1
 
-## Comparison evidence
+## 对照证据
 
-- 首页 1100px 首屏（本轮重校）：`qa/home-fidelity-comparison-v2.png`
-- Info 1100px 首屏：`qa/info-top-comparison-v3.png`
-- Info 1100px 团队区：`qa/info-mid-comparison-v3.png`
-- 方太 1280px 首屏：`qa/fotile-top-comparison-v3.png`
-- 手机案例：`qa/mobile-case-final.png`
+- 整页同屏对照：`qa/home-final-stitched-comparison.png`
+  - 设计稿裁为 1084 × 1550 px。
+  - 实现由同一 1100px CSS 视口下的顶部与页脚截图按 `scrollY=696` 无缩放拼合为 1084 × 1550 px。
+- 顶部聚焦对照：`qa/home-final-top-comparison.png`
+- 能力区与页脚聚焦对照：`qa/home-final-footer-comparison.png`
 
-浏览器的长页面 full-page 截图在懒加载图片发生尺寸稳定时会产生拼接重复，因此最终判断采用相同视口、相同滚动状态的聚焦对照，并辅以整页 DOM 尺寸、内容顺序和全部图片加载检查。Figma 完整长图仍逐段核对，未用失真的拼接截图作通过依据。
+## Findings
 
-## Pass history
+- 无 P0、P1 或 P2 差异。
+- 字体与排版：Source Sans 3 / PingFang SC / Source Han Sans CN 的字重、36/56 标题节奏和换行与设计稿一致。
+- 间距与布局：首页关键坐标保持为标题 `y=300`、图库 `y=462`、能力区 `y=962`、页脚 `y=1082`；删除 WORK 卡片后页脚恢复到 Figma 位置。
+- 色彩：亮色背景、正文色、边框与设计稿一致；暗色模式仍由相同颜色变量驱动。
+- 图片：四张 Figma 原始项目图的顺序、裁切、比例与清晰度保持一致，没有占位图或代码绘制替代品。
+- 文案：设计稿正文与联系信息保持一致。年份使用当前年份；语言/主题入口为用户批准的页脚扩展；未核验备案号仍不展示。
 
-1. 首轮：发现首页标题过大、四张图被排成两行、Info 介绍区过散、案例标题/说明使用了偏通用的双栏结构。
-2. 修正：恢复 Figma 的品牌比例、单行拼贴、Info 连续文本节奏、案例全宽图文结构。
-3. 用户复核后重校：页头只保留 Figma 原始 Logo 与 INFO 字形；语言和亮暗模式移至页脚；Source Sans 3 与 Source Han Sans CN 改为本地字体，中文优先匹配设计稿使用环境中的 PingFang SC。
-4. 复核：首页关键框坐标与 Figma 一致（页头 158、标题 y=300、图库 y=462、能力区 y=962）；案例标题为 45px Light；Info 正文为 36/56。
-5. 响应式：375、768、1100、1280 四档的 8 个页面路由均无横向溢出；中文/英文 `lang` 正确。
-6. 交互：亮/暗模式切换并持久化；中英文链接切换正确；两项入口均位于页脚。
+## 响应式与交互
 
-## Accessibility and content
+- 中文、英文首页在 375 / 768 / 1100 / 1280px 均无横向溢出。
+- 两种语言首页的 WORK 卡片和 `.work-list` 均已完全移除。
+- 语言入口仍指向对应语言页面；亮暗模式连续切换后可回到亮色状态并保持标签同步。
+- 浏览器控制台无 error 或 warning。
 
-- 使用语义化导航、标题、按钮、跳转链接和图片替代文本。
-- 键盘焦点可见，菜单支持 Escape 关闭，支持 reduced motion。
-- 亮/暗模式均使用统一颜色变量，客户标志在暗色模式反相显示。
-- 备案号未发布：Figma 中号码无法确认真实性，避免在正式站点展示未核验信息。
+## Comparison history
 
-## Final result
+1. 先前 P2：设计稿不存在的两张 WORK 卡片将页脚推离 `y=1082`。
+2. 修复：删除两种语言的数据、模板结构、生成逻辑与孤儿样式。
+3. 复核：WORK 节点数量为 0，页脚恢复 `y=1082`，整页同屏对照没有剩余 P0/P1/P2 差异。
 
-pending_user_decision
+## Follow-up polish
 
-Figma 中没有首页能力区之后的两张 WORK 案例卡片。其余本轮校准项已通过；待用户决定删除或保留该区块后，完成最后一轮整页验收。
+- 设计稿中的 2025 年份改为当前年份属于预期内容更新。
+- 页脚 EN / DARK 为用户批准的功能性扩展，不视为设计漂移。
+
+final result: passed

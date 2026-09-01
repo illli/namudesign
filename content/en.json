@@ -9,8 +9,7 @@
     "home": {
       "template": "home", "title": "NAMU DESIGN | Brand Experience Studio", "description": "NAMU DESIGN is a brand experience studio creating digital experiences, interactions and visual communication.", "eyebrow": "NAMU DESIGN", "heading": "NAMUDESIGN is a brand experience studio creating exceptional experiences for leading brands.", "intro": "From product strategy, concepts and branding to digital experience, campaign design and motion.",
       "images": [{"src": "/assets/images/home/home-01.png", "alt": "NAMU DESIGN brand experience project"}, {"src": "/assets/images/home/home-02.png", "alt": "NAMU DESIGN digital product interface"}, {"src": "/assets/images/home/home-03.png", "alt": "NAMU DESIGN mobile experience project"}, {"src": "/assets/images/home/home-04.png", "alt": "NAMU DESIGN interactive experience project"}],
-      "tags": ["Brand Design", "Concept Design", "Experience Design", "GEO", "Campaign Design", "3D & Motion"],
-      "projects": [{"route": "fotile", "name": "FOTILE", "title": "FOTILE Brand Campaign Collection", "image": "/assets/images/fotile/case-01-01.png"}, {"route": "farfetch", "name": "FARFETCH China", "title": "FARFETCH China Campaign Collection", "image": "/assets/images/farfetch-china/fifi-01.png"}]
+      "tags": ["Brand Design", "Concept Design", "Experience Design", "GEO", "Campaign Design", "3D & Motion"]
     },
     "info": {
       "template": "info", "title": "Info | NAMU DESIGN", "description": "Meet the NAMU DESIGN team and explore our clients and services.", "eyebrow": "INFO", "heading": "NAMUDESIGN is a brand experience studio creating exceptional digital experiences for leading brands.",

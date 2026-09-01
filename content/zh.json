@@ -19,11 +19,7 @@
         {"src": "/assets/images/home/home-03.png", "alt": "NAMU DESIGN 移动端体验设计"},
         {"src": "/assets/images/home/home-04.png", "alt": "NAMU DESIGN 交互体验项目"}
       ],
-      "tags": ["品牌设计", "概念设计", "体验设计", "GEO", "营销物料", "3D 视频"],
-      "projects": [
-        {"route": "fotile", "name": "FOTILE", "title": "方太品牌传播设计合集", "image": "/assets/images/fotile/case-01-01.png"},
-        {"route": "farfetch", "name": "FARFETCH China", "title": "FARFETCH China 活动设计合集", "image": "/assets/images/farfetch-china/fifi-01.png"}
-      ]
+      "tags": ["品牌设计", "概念设计", "体验设计", "GEO", "营销物料", "3D 视频"]
     },
     "info": {
       "template": "info",

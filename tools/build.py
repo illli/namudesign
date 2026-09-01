@@ -68,28 +68,11 @@ def image_figure(image: dict, class_name: str, eager: bool = False) -> str:
     )
 
 
-def render_home(page: dict, locale: dict, routes: dict) -> str:
+def render_home(page: dict, locale: dict) -> str:
     gallery = "\n".join(
         image_figure(image, "home-gallery-item", eager=index == 0)
         for index, image in enumerate(page["images"])
     )
-    projects = []
-    for project in page["projects"]:
-        url = routes[project["route"]][locale["locale"]]
-        projects.append(
-            "\n".join(
-                [
-                    f'        <a class="project-card" href="{esc(url)}">',
-                    f'          <figure class="project-image"><img src="{esc(project["image"])}" alt="" loading="lazy"></figure>',
-                    '          <div class="project-copy">',
-                    f'            <p>{esc(project["name"])}</p>',
-                    f'            <h3>{esc(project["title"])}</h3>',
-                    f'            <span>{esc(locale["labels"]["view_project"])}</span>',
-                    "          </div>",
-                    "        </a>",
-                ]
-            )
-        )
     tags = "\n".join(f"        <li>{esc(item)}</li>" for item in page["tags"])
     return template("home.html").format(
         eyebrow=esc(page["eyebrow"]),
@@ -98,7 +81,6 @@ def render_home(page: dict, locale: dict, routes: dict) -> str:
         work_label=esc(locale["labels"]["work"]),
         gallery_html=gallery,
         tags_html=tags,
-        projects_html="\n".join(projects),
     )
 
 
@@ -217,7 +199,7 @@ def build() -> None:
             route = site["routes"][page_key][locale_name]
             work_url = site["routes"]["home"][locale_name] + "#work"
             if page["template"] == "home":
-                body = render_home(page, locale, site["routes"])
+                body = render_home(page, locale)
             elif page["template"] == "info":
                 body = render_info(page)
             elif page["template"] == "case-study":
