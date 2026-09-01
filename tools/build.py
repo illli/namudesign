@@ -258,7 +258,6 @@ def build() -> None:
                     if locale_name == "zh"
                     else "<br>".join(
                         [
-                            esc(site["contact"]["address_zh"]),
                             esc(site["contact"]["address_en_line_1"]),
                             esc(site["contact"]["address_en_line_2"]),
                         ]
