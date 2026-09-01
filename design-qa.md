@@ -212,9 +212,56 @@ final result: passed
 
 ---
 
+## Design QA：Info 移动端 Logo 与服务内容同步
+
+**Findings**
+
+- 无遗留 P0/P1/P2 问题。移动端 Logo 已整体收小，服务区在保留标题的同时与首页四张卡片完全一致。
+
+**Implementation Checklist**
+
+- [x] 767px 以下统一缩小 6 个真实客户 Logo，不修改品牌源文件。
+- [x] Info 服务内容直接读取对应语言首页 `capabilities`，不再维护重复文案。
+- [x] Info 服务列表复用首页卡片结构、双列/四列规则与亮暗模式 token。
+- [x] 检查 375/532/768/1100/1280 中英文视口、内容一致性、图片加载与控制台。
+
+## Evidence
+
+- Source visual truth：本轮对话内两张 532 × 766 浏览器标注截图；分别框选客户 Logo 区和旧服务列表（对话附件，无本地文件路径）。
+- Implementation screenshots：[qa/info-mobile-logos-532.png](qa/info-mobile-logos-532.png)、[qa/info-mobile-logo-services-532.png](qa/info-mobile-logo-services-532.png)。
+- Source pixels：532 × 766；implementation captures：517 × 744（浏览器内容区截图）；CSS viewport：532 × 766；deviceScaleFactor：1，无密度换算。
+- State：中文 Info、移动端、亮色；另验证中文暗色和英文内容。
+- Full-view comparison：原图 Logo 接近填满两列宽度，旧服务为四行文本列表；实现中 Logo 留白增加，服务标题下改为与首页一致的 2 × 2 线框卡片。
+- Focused region comparison：单独捕获客户区与服务区；ByteDance、Louis Vuitton、FOTILE、Haier、Daikin、Starbucks 均保持原始图形比例和清晰度。
+- Primary interactions tested：语言切换后的英文 Info 使用 Brand、Product、Websites、Development；主题按钮切换暗色后 Logo、卡片和文字正常。
+- Responsive evidence：375/532/768/1100/1280 × 中英文共 10 个组合均为 6 个已加载 Logo、4 张无裁切卡片、0 横向溢出。
+- Content parity：中英文 Info 四项标题与说明均逐项等于对应首页内容。
+- Console errors checked：是，0 条 warning/error。
+
+## Required fidelity surfaces
+
+- Fonts and typography：服务卡片复用首页 27/22/17px 标题和 16/13px 说明规则，系统字体栈、字重、行高保持一致。
+- Spacing and layout rhythm：移动端 Logo 宽度为列宽 86%，内部上下 padding 增至 18px；服务卡片保持手机双列、桌面四列。
+- Colors and visual tokens：继续使用现有背景、前景、弱文字和 1px 边线 token，亮暗模式一致。
+- Image quality and asset fidelity：6 个 Logo 均为已有真实 SVG/PNG；仅调整容器内尺寸，不裁切、不替换、不重绘。
+- Copy and content：Info 保留“服务 / Services”标题，四项名称和说明直接来自首页唯一内容源。
+
+## Comparison history
+
+- Earlier P2：移动端 Logo 视觉尺寸过满；Info 服务文案和列表形态与首页不一致。
+- Fix：移动端 Logo 宽度收至 86%、可视高度收紧；Info 服务改用首页内容源和卡片组件。
+- Post-fix evidence：532px 客户/服务截图显示更充足留白和 2 × 2 卡片；10 个响应式组合无溢出或裁切。
+- Earlier P2：1100px 客户区存在 15px 横向溢出。
+- Fix：客户区宽度改为 `min(1100px, calc(100% + 100px))`，保留桌面六列比例并适配实际内容宽度。
+- Post-fix evidence：1100px 中英文均为 0 横向溢出。
+
+final result: passed
+
+---
+
 ## Current build gate
 
-- Latest report：`首页移除两张占位作品`。
-- Browser-rendered screenshot、responsive checks、link checks and console checks are recorded above.
+- Latest report：`Info 移动端 Logo 与服务内容同步`。
+- Browser-rendered screenshots、responsive checks、content parity、theme and console checks are recorded above.
 
 final result: passed

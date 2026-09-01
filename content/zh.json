@@ -54,13 +54,7 @@
         {"src": "/assets/images/info/clients/daikin.png", "alt": "Daikin 大金"},
         {"src": "/assets/images/info/clients/starbucks.svg", "alt": "Starbucks"}
       ],
-      "services_heading": "服务",
-      "services": [
-        {"name": "产品策略", "description": "一线调研、业务流与专家调研、洞察与共创、触点策略与产品机遇"},
-        {"name": "体验设计", "description": "网站、App、小程序等数字触点的界面与交互设计"},
-        {"name": "营销物料", "description": "为新品发布、活动与节日创作沟通概念、主视觉、3D 视觉及延展设计"},
-        {"name": "落地运营", "description": "为数字媒介设计动画表现、动效系统与响应式视觉元素"}
-      ]
+      "services_heading": "服务"
     },
     "fotile": {
       "template": "case-study", "title": "方太品牌传播设计合集｜NAMU DESIGN", "description": "NAMU DESIGN 为方太打造展会互动、会员盲盒与品牌传播数字体验。", "eyebrow": "FOTILE", "heading": "方太品牌传播设计合集", "summary": "围绕展会互动、会员运营与品牌内容，形成从线上预热、现场参与到分享传播的数字体验。", "facts": ["CLIENT · FOTILE", "YEAR · 2025", "DESIGNER · TT"],

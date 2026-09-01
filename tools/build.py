@@ -117,7 +117,7 @@ def render_home(page: dict, locale: dict, routes: dict) -> str:
     )
 
 
-def render_info(page: dict, locale_name: str) -> str:
+def render_info(page: dict, locale_name: str, capabilities: list[dict]) -> str:
     paragraphs = "\n".join(f"        <p>{esc(item)}</p>" for item in page["body"])
     client_items = "\n".join(
         f'            <li><img src="{esc(client["src"])}" alt="{esc(client["alt"])}" loading="lazy"></li>'
@@ -150,13 +150,13 @@ def render_info(page: dict, locale_name: str) -> str:
     service_rows = "\n".join(
         "\n".join(
             [
-                '            <li class="service-row">',
-                f'              <strong>{esc(service["name"])}</strong>',
-                f'              <span>{esc(service["description"])}</span>',
+                '            <li class="capability-card">',
+                f'              <h3>{esc(service["name"])}</h3>',
+                f'              <p>{esc(service["description"])}</p>',
                 "            </li>",
             ]
         )
-        for service in page["services"]
+        for service in capabilities
     )
     return template("info.html").format(
         eyebrow=esc(page["eyebrow"]),
@@ -234,7 +234,9 @@ def build() -> None:
             if page["template"] == "home":
                 body = render_home(page, locale, site["routes"])
             elif page["template"] == "info":
-                body = render_info(page, locale_name)
+                body = render_info(
+                    page, locale_name, locale["pages"]["home"]["capabilities"]
+                )
             elif page["template"] == "case-study":
                 body = render_case(page, work_url, locale["labels"]["back_to_work"])
             else:
