@@ -169,9 +169,52 @@ final result: passed
 
 ---
 
+## Design QA：首页移除两张占位作品
+
+**Findings**
+
+- 无遗留 P0/P1/P2 问题。用户标注的两张占位作品已经撤下，页面只循环展示方太与 FARFETCH 两个真实案例。
+
+**Implementation Checklist**
+
+- [x] 中英文内容模型均只保留两个带详情页链接的案例。
+- [x] 删除第 3、4 项专用尺寸、顺序和移动端比例规则。
+- [x] 保留双份轨道、28 秒线性无缝动画与 reduced-motion 静态横向浏览。
+- [x] 检查 375/532/768/1100/1280 中英文视口、资源加载、链接与控制台。
+
+## Evidence
+
+- Source visual truth：本轮对话内两张 532 × 766 浏览器标注截图；蓝框分别指向两张待撤下的占位图（对话附件，无本地文件路径）。
+- Implementation screenshot：[qa/home-gallery-two-cases-532.png](qa/home-gallery-two-cases-532.png)。
+- Source pixels：532 × 766；implementation capture：517 × 744（浏览器内容区截图）；CSS viewport：532 × 766；deviceScaleFactor：1，无密度换算。
+- State：中文首页、亮色、作品轨道运行中；另对英文首页做结构与响应式检查。
+- Full-view comparison：标注截图中存在两张无详情链接的手机界面占位图；实现截图中只出现方太与 FARFETCH 的横向案例画面，没有占位节点或额外空白卡位。
+- Focused region comparison：作品轨道是唯一变更区域，532px 截图中两张横向案例保持同高、间距连续；无需额外裁切图。
+- Primary interactions tested：两张作品链接分别指向当前语言下的方太和 FARFETCH China 详情页；循环动画保持 `home-gallery-marquee`。
+- Responsive evidence：375/532/768/1100/1280 × 中英文共 10 个组合均为 2 项、2 链接、0 占位、0 横向溢出，图片全部加载。
+- Console errors checked：是，0 条 warning/error。
+
+## Required fidelity surfaces
+
+- Fonts and typography：本次未改字体、字号、字重、行高或标题换行；沿用现有系统字体栈。
+- Spacing and layout rhythm：删除竖版占位图后，两个横向案例仍由现有 gap 和双份轨道连续衔接，第一屏高度不变。
+- Colors and visual tokens：本次未改背景、前景、边线或亮暗模式 token。
+- Image quality and asset fidelity：仅显示两个详情页已有真实素材；图片在 10 个响应式组合中均加载成功且保持原裁切规则。
+- Copy and content：没有新增文案；仅撤下用户指定的两个占位内容，中英文同步。
+
+## Comparison history
+
+- Earlier P2：作品轨道包含两个未开放详情页的占位项目，用户明确要求先撤下。
+- Fix：从中英文内容模型移除两项，并清理它们专用的桌面/手机布局规则；素材文件保留未删除。
+- Post-fix evidence：532px 浏览器截图仅显示真实案例；DOM 和 10 个响应式组合均为 0 占位节点。
+
+final result: passed
+
+---
+
 ## Current build gate
 
-- Latest report：`服务卡片去箭头与手机双列`。
-- Required browser evidence、responsive checks、theme checks and console checks are recorded above.
+- Latest report：`首页移除两张占位作品`。
+- Browser-rendered screenshot、responsive checks、link checks and console checks are recorded above.
 
 final result: passed

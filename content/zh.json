@@ -15,9 +15,7 @@
       "intro": "从产品策略、概念与品牌设计，到数字体验、营销物料与动态视觉。",
       "images": [
         {"src": "/assets/images/fotile/case-01-01.png", "alt": "方太品牌传播设计合集", "route": "fotile", "link_label": "查看方太品牌传播设计合集"},
-        {"src": "/assets/images/farfetch-china/fifi-01.png", "alt": "FARFETCH China 活动设计合集", "route": "farfetch", "link_label": "查看 FARFETCH China 活动设计合集"},
-        {"src": "/assets/images/home/home-03.png", "alt": "NAMU DESIGN 移动端体验设计"},
-        {"src": "/assets/images/home/home-04.png", "alt": "NAMU DESIGN 交互体验项目"}
+        {"src": "/assets/images/farfetch-china/fifi-01.png", "alt": "FARFETCH China 活动设计合集", "route": "farfetch", "link_label": "查看 FARFETCH China 活动设计合集"}
       ],
       "capabilities_label": "服务能力",
       "capabilities": [
