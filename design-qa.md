@@ -1,8 +1,8 @@
-# Design QA：英文团队职位纯英文
+# Design QA：英文姓名与客户 Logo 清晰度
 
 **Findings**
 
-- 无遗留 P0/P1/P2 问题。英文团队名单已从“英文姓名 + 中文职位 + 英文职位”调整为“英文姓名 + 英文职位”。
+- 无遗留 P0/P1/P2 问题。英文姓名格式、方太 Logo 比例和大金 Logo 完整性均已按标注修正。
 
 **Open Questions**
 
@@ -10,10 +10,11 @@
 
 **Implementation Checklist**
 
-- [x] 英文 Info 的 8 条团队信息只输出英文姓名与英文职位。
-- [x] 中文 Info 继续只输出中文姓名与中文职位。
-- [x] 检查 375、532、1100 CSS px 三档，无团队行或页面横向溢出。
-- [x] 检查浏览器控制台，无错误。
+- [x] 英文 Info 使用“中文姓名 + 英文名/昵称”，职位只显示英文。
+- [x] 中文 Info 仍只显示中文姓名与中文职位。
+- [x] 方太 Logo 去除 SVG 内部无效留白造成的视觉缩小。
+- [x] 大金 Logo 使用完整 1000 × 277 品牌素材，不再显示为 3px 竖线。
+- [x] 检查中英文、亮暗模式、375/532/1100 CSS px 与浏览器控制台。
 
 **Follow-up Polish**
 
@@ -21,30 +22,33 @@
 
 ## Evidence
 
-- Source visual truth：`qa/en-team-roles-before.png`
-- Implementation：`qa/en-team-roles-after-desktop.png`
-- Mobile implementation：`qa/en-team-roles-after.png`
-- Full-view comparison：`qa/en-team-roles-comparison.png`
-- Viewport：桌面 1280 × 734 CSS px；移动端 532 × 766 CSS px；另验证 375 与 1100 CSS px。
-- Pixel dimensions：source 1265 × 712 px；desktop implementation 1265 × 725 px（对比图裁切至 1265 × 712 px）；mobile implementation 517 × 744 px。
-- Density normalization：浏览器 device scale factor 1；桌面对比保持同宽并只裁切实现图底部 13 px，未缩放文字或布局。
-- State：英文 `/en/info/`，页面滚动到 Team 区；中文版 `/zh/info/` 用于语言回归。
-- Primary interactions tested：页面导航、滚动至团队区、三档响应式重排。
+- Source visual truth：`qa/en-info-names-before.png`、`qa/en-info-clients-before.png`
+- Implementation：`qa/en-info-names-after.png`、`qa/en-info-clients-after.png`
+- Dark implementation：`qa/en-info-clients-dark-after.png`
+- Full-view comparisons：`qa/en-info-names-comparison.png`、`qa/en-info-clients-comparison.png`
+- Viewport：532 × 766 CSS px；另验证 375 与 1100 CSS px。
+- Pixel dimensions：所有单张前后截图均为 517 × 744 px；前后并排对比图均为 1034 × 744 px。
+- Density normalization：device scale factor 1；前后截图使用相同视口、路由、主题、滚动区域与像素尺寸，无缩放。
+- State：英文 `/en/info/` 的 Team 与 Clients 区；中文 `/zh/info/` 用于内容回归；Clients 另检查暗色模式。
+- Primary interactions tested：页面导航、滚动至目标区域、页脚亮暗模式切换。
 - Console errors checked：是，0 条。
-- Focused region comparison：本次目标仅为 Team 区内容与列结构；全视图对比中的文字清晰可读，无需额外裁切。
+- Focused region comparison：姓名与 Logo 均属于细节目标，因此分别制作同视口并排对比；文字、字标轮廓和光学尺寸清晰可读。
 
 ## Required fidelity surfaces
 
-- Fonts and typography：字体、字号、字重、行高未改；只移除不属于英文版的中文职位。
-- Spacing and layout rhythm：英文桌面由三列回归两列，沿用中文版既有 1fr/2.5fr 网格；移动端保持单列顺序，无溢出。
-- Colors and visual tokens：未改颜色、边框或主题 token；亮暗模式逻辑不受影响。
-- Image quality and asset fidelity：本次未改任何图片或素材。
-- Copy and content：英文版 8 条职位均为英文且无 CJK 字符；中文版 8 条仍为中文姓名与中文职位。
+- Fonts and typography：成员字体、字号、字重、行高未改；中文姓名使用现有中文字体回退，英文名/昵称继续沿用同一排版。
+- Spacing and layout rhythm：团队两列结构和客户两列网格未改；仅修正 Logo 资产内部画布比例，不改变区块间距。
+- Colors and visual tokens：亮色保持黑色字标，暗色保持白色字标；背景、文字及分隔线 token 未改。
+- Image quality and asset fidelity：方太继续使用原矢量字标并收紧 viewBox；大金使用完整高分辨率品牌素材并保留透明背景，所有图片 naturalWidth 均有效。
+- Copy and content：英文版 8 位成员均为中文姓名加既有英文名/昵称，8 个职位均为英文；中文版内容保持原样。
 
 ## Comparison history
 
-- Earlier P2：英文 Team 行混入中文职位，造成同一语言页面内信息重复，并在移动端形成三行内容。
-- Fix：构建器英文角色字段从 `role_zh + role_en` 改为仅 `role_en`，团队行统一使用本地化两列布局。
-- Post-fix evidence：`qa/en-team-roles-comparison.png` 右侧显示所有中文职位已移除；375/532/1100 DOM 检查中每行均为 2 个子项、CJK 行数为 0、横向溢出为 0。
+- Earlier P2：英文成员姓名把中文名拼音化，与“中文名在前、英文名在后”的标注不一致。
+- Fix：将英文数据中的拼音姓名替换为中文姓名，只保留已有英文名或昵称。
+- Post-fix evidence：`qa/en-info-names-comparison.png` 右侧显示“周展宇 11、潘梦雨 DIO、马文超 Jerry”等正确格式。
+- Earlier P2：方太 SVG 的 240 × 75 画布包含大量留白，实际字标在移动端过小；大金 SVG 的 viewBox 只有 3px 宽，内容只剩竖线。
+- Fix：方太 SVG 改为贴合实际字标的 131 × 19 viewBox 与正确宽高比例；大金替换为完整 1000 × 277 素材，并为亮暗模式设置清晰的单色滤镜。
+- Post-fix evidence：`qa/en-info-clients-comparison.png` 右侧方太字标达到与相邻 Logo 相称的光学尺寸，大金图形与 DAIKIN 字标完整可读；`qa/en-info-clients-dark-after.png` 显示暗色模式同样清晰。
 
 final result: passed

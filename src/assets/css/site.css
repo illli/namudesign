@@ -165,7 +165,7 @@ figure {
 }
 
 :root[data-theme="dark"] .brand img,
-:root[data-theme="dark"] .client-list img {
+:root[data-theme="dark"] .client-list img:not([src$="/daikin.png"]) {
   filter: invert(1);
 }
 
@@ -542,6 +542,14 @@ body[data-page="farfetch"] .brand img {
   max-height: 58px;
   object-fit: contain;
   object-position: left center;
+}
+
+.client-list img[src$="/daikin.png"] {
+  filter: grayscale(1) brightness(0);
+}
+
+:root[data-theme="dark"] .client-list img[src$="/daikin.png"] {
+  filter: grayscale(1) brightness(0) invert(1);
 }
 
 .case-gallery-item {

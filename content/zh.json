@@ -45,9 +45,9 @@
       "clients": [
         {"src": "/assets/images/info/clients/bytedance.svg", "alt": "ByteDance"},
         {"src": "/assets/images/info/clients/louis-vuitton.svg", "alt": "Louis Vuitton"},
-        {"src": "/assets/images/info/clients/fotile.svg", "alt": "FOTILE 方太"},
+        {"src": "/assets/images/info/clients/fotile.svg?v=20260901b", "alt": "FOTILE 方太"},
         {"src": "/assets/images/info/clients/haier.svg", "alt": "Haier 海尔"},
-        {"src": "/assets/images/info/clients/daikin.svg", "alt": "Daikin 大金"},
+        {"src": "/assets/images/info/clients/daikin.png", "alt": "Daikin 大金"},
         {"src": "/assets/images/info/clients/starbucks.svg", "alt": "Starbucks"}
       ],
       "services_heading": "服务",
