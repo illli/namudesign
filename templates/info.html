@@ -1,0 +1,22 @@
+      <article class="info-page" aria-labelledby="page-title">
+        <header>
+          <p class="eyebrow">{eyebrow}</p>
+          <h1 id="page-title">{heading}</h1>
+        </header>
+{body_html}
+        <figure class="studio-image"><img src="{studio_image_src}" alt="{studio_image_alt}" loading="eager"></figure>
+        <section class="team-section" aria-labelledby="team-title">
+          <h2 id="team-title">{team_heading}</h2>
+          <ul class="team-list">
+{team_html}
+          </ul>
+        </section>
+        <p class="client-statement">{client_statement}</p>
+{clients_html}
+        <section class="services-section" aria-labelledby="services-title">
+          <h2 id="services-title">{services_heading}</h2>
+          <ul class="service-list">
+{services_html}
+          </ul>
+        </section>
+      </article>

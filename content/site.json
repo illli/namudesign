@@ -1,0 +1,17 @@
+{
+  "brand": "NAMU DESIGN",
+  "origin": "https://namu.design",
+  "default_locale": "zh",
+  "locales": ["zh", "en"],
+  "contact": {
+    "email": "hi@namu.design",
+    "phone_display": "18516592921",
+    "phone_href": "+8618516592921"
+  },
+  "routes": {
+    "home": {"zh": "/zh/", "en": "/en/"},
+    "info": {"zh": "/zh/info/", "en": "/en/info/"},
+    "fotile": {"zh": "/zh/work/fotile/", "en": "/en/work/fotile/"},
+    "farfetch": {"zh": "/zh/work/farfetch-china/", "en": "/en/work/farfetch-china/"}
+  }
+}

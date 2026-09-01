@@ -2,3 +2,6 @@
 .deploy/
 skills-lock.json
 .DS_Store
+dist/
+qa/
+design-reference/

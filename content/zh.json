@@ -1,0 +1,90 @@
+{
+  "locale": "zh",
+  "html_lang": "zh-CN",
+  "language_name": "中文",
+  "other_language_name": "EN",
+  "labels": {"home": "首页", "info": "INFO", "work": "WORK", "menu": "菜单", "theme": "切换显示模式", "skip": "跳到主要内容", "view_project": "查看项目", "back_to_work": "返回项目"},
+  "footer": {"address": "上海市徐汇区淮海中路1610弄1号"},
+  "pages": {
+    "home": {
+      "template": "home",
+      "title": "NAMU DESIGN｜品牌体验设计工作室",
+      "description": "NAMU DESIGN 是一家品牌体验设计公司，为品牌打造数字体验、互动与视觉设计。",
+      "eyebrow": "NAMU DESIGN",
+      "heading": "NAMUDESIGN 是一家品牌体验设计公司，我们为顶尖品牌打造极致体验。",
+      "intro": "从产品策略、概念与品牌设计，到数字体验、营销物料与动态视觉。",
+      "images": [
+        {"src": "/assets/images/home/home-01.png", "alt": "NAMU DESIGN 品牌设计项目界面"},
+        {"src": "/assets/images/home/home-02.png", "alt": "NAMU DESIGN 数字产品界面"},
+        {"src": "/assets/images/home/home-03.png", "alt": "NAMU DESIGN 移动端体验设计"},
+        {"src": "/assets/images/home/home-04.png", "alt": "NAMU DESIGN 交互体验项目"}
+      ],
+      "tags": ["品牌设计", "概念设计", "体验设计", "GEO", "营销物料", "3D 视频"],
+      "projects": [
+        {"route": "fotile", "name": "FOTILE", "title": "方太品牌传播设计合集", "image": "/assets/images/fotile/case-01-01.png"},
+        {"route": "farfetch", "name": "FARFETCH China", "title": "FARFETCH China 活动设计合集", "image": "/assets/images/farfetch-china/fifi-01.png"}
+      ]
+    },
+    "info": {
+      "template": "info",
+      "title": "Info｜NAMU DESIGN",
+      "description": "了解 NAMU DESIGN 的团队、客户与服务。",
+      "eyebrow": "INFO",
+      "heading": "NAMUDESIGN 是一家品牌体验设计公司，我们为顶尖品牌打造极致数字体验。",
+      "body": ["我们认为极致用户体验由 95% 无感交互与 5% 视觉点睛构成。", "我们的工作，是通过精准的交互与视觉设计，让可靠融入产品，让惊喜成为用户记忆。"],
+      "studio_image": {"src": "/assets/images/info/studio.png", "alt": "NAMU DESIGN 上海工作室"},
+      "team_heading": "团队",
+      "team": [
+        {"name": "周展宇 11", "role_zh": "客户经理", "role_en": "Account Manager"},
+        {"name": "潘梦雨 DIO", "role_zh": "美术指导", "role_en": "Creative Director"},
+        {"name": "马文超 Jerry", "role_zh": "美术指导", "role_en": "Creative Director"},
+        {"name": "吕天宇 TT", "role_zh": "UIUX 设计师", "role_en": "Art Director"},
+        {"name": "李江南 Jiangnan", "role_zh": "三维与动态设计师", "role_en": "3D & Motion Designer"},
+        {"name": "钟秋月 Monte", "role_zh": "高级设计师", "role_en": "Senior Designer"},
+        {"name": "熊文梅 Maime", "role_zh": "运营经理", "role_en": "Operations Manager"},
+        {"name": "左定明 zuozuo", "role_zh": "运营经理", "role_en": "Operations Manager"}
+      ],
+      "client_statement": "我们服务少量行业头部公司，为他们创造独特且具有颠覆性的线上用户体验，驱动变革与增长。",
+      "clients_heading": "客户",
+      "clients": [
+        {"src": "/assets/images/info/clients/bytedance.svg", "alt": "ByteDance"},
+        {"src": "/assets/images/info/clients/louis-vuitton.svg", "alt": "Louis Vuitton"},
+        {"src": "/assets/images/info/clients/fotile.svg", "alt": "FOTILE 方太"},
+        {"src": "/assets/images/info/clients/haier.svg", "alt": "Haier 海尔"},
+        {"src": "/assets/images/info/clients/daikin.svg", "alt": "Daikin 大金"},
+        {"src": "/assets/images/info/clients/starbucks.svg", "alt": "Starbucks"}
+      ],
+      "services_heading": "服务",
+      "services": [
+        {"name": "产品策略", "description": "一线调研、业务流与专家调研、洞察与共创、触点策略与产品机遇"},
+        {"name": "体验设计", "description": "网站、App、小程序等数字触点的界面与交互设计"},
+        {"name": "营销物料", "description": "为新品发布、活动与节日创作沟通概念、主视觉、3D 视觉及延展设计"},
+        {"name": "落地运营", "description": "为数字媒介设计动画表现、动效系统与响应式视觉元素"}
+      ]
+    },
+    "fotile": {
+      "template": "case-study", "title": "方太品牌传播设计合集｜NAMU DESIGN", "description": "NAMU DESIGN 为方太打造展会互动、会员盲盒与品牌传播数字体验。", "eyebrow": "FOTILE", "heading": "方太品牌传播设计合集", "summary": "围绕展会互动、会员运营与品牌内容，形成从线上预热、现场参与到分享传播的数字体验。", "facts": ["CLIENT · FOTILE", "YEAR · 2025", "DESIGNER · TT"],
+      "sections": [
+        {"label": "Case 01", "title": "方太 HI-tech Hi life AWE 展会互动", "description": "结合上海 AWE 家电博览会与方太展会策划，设计预热活动与现场互动，让用户了解展会信息、参与活动并分享体验。", "images": [
+          {"src": "/assets/images/fotile/case-01-01.png", "alt": "方太 AWE 展会互动手机场景"}, {"src": "/assets/images/fotile/case-01-04.png", "alt": "方太 AWE 展会互动界面合集"}, {"src": "/assets/images/fotile/case-01-05.jpeg", "alt": "方太展会互动产品展示"}, {"src": "/assets/images/fotile/case-01-06.png", "alt": "方太展会互动移动端页面"}
+        ]},
+        {"label": "Case 02", "title": "方太会员盲盒抽奖", "description": "围绕会员积分、任务与抽奖玩法组织体验路径，连接参与、分享与会员运营。", "images": [
+          {"src": "/assets/images/fotile/case-02-01.png", "alt": "方太会员积分盲盒主界面"}, {"src": "/assets/images/fotile/case-02-02.png", "alt": "方太会员盲盒界面"}, {"src": "/assets/images/fotile/case-02-07.png", "alt": "方太会员盲盒中奖场景"}
+        ]},
+        {"label": "Case 03", "title": "一起找回消失的味道——陈坤和他的朋友们", "description": "围绕直播内容与品牌会员体验，设计活动入口、内容浏览与预约路径。", "images": [
+          {"src": "/assets/images/fotile/case-03-01.png", "alt": "方太品牌直播活动界面合集"}, {"src": "/assets/images/fotile/case-03-03.png", "alt": "方太品牌直播活动主视觉"}
+        ]}
+      ]
+    },
+    "farfetch": {
+      "template": "case-study", "title": "FARFETCH China 活动设计合集｜NAMU DESIGN", "description": "NAMU DESIGN 为 FARFETCH China 打造年度账单、抽奖、循环时尚与私域体验。", "eyebrow": "FARFETCH CHINA", "heading": "FARFETCH China 活动设计合集", "summary": "以品牌内容、互动机制与本地化运营为线索，呈现 FARFETCH China 的多组数字活动体验。", "facts": ["CLIENT · FARFETCH CHINA", "DIGITAL EXPERIENCE", "CAMPAIGN DESIGN"],
+      "sections": [
+        {"label": "Case 01", "title": "ANNUAL-BILL 2021", "description": "以年度使用数据为内容基础，让用户回顾与 App 的年度互动，并形成可分享的品牌体验。", "images": [{"src": "/assets/images/farfetch-china/annual-2021-02.png", "alt": "FARFETCH 2021 年度账单场景"}, {"src": "/assets/images/farfetch-china/annual-2021-03.png", "alt": "FARFETCH 2021 年度账单界面"}]},
+        {"label": "Case 02", "title": "ANNUAL-BILL 2022", "description": "结合产品特征、用户数据与年度公共记忆，以游戏化方式组织年度账单内容。", "images": [{"src": "/assets/images/farfetch-china/annual-2022-01.png", "alt": "FARFETCH 2022 年度账单角色界面"}, {"src": "/assets/images/farfetch-china/annual-2022-07.png", "alt": "FARFETCH 2022 年度账单互动场景"}]},
+        {"label": "Case 03", "title": "LUCKYDRAW", "description": "通过任务与抽奖机会连接用户参与，让活动体验更轻量、更具互动性。", "images": [{"src": "/assets/images/farfetch-china/luckydraw-01.png", "alt": "FARFETCH 抽奖活动界面"}, {"src": "/assets/images/farfetch-china/luckydraw-04.png", "alt": "FARFETCH 抽奖活动使用场景"}]},
+        {"label": "Case 04", "title": "SECOND-LIFE", "description": "在 App 内提供二手奢侈品转售体验，延长闲置物品的使用周期。", "images": [{"src": "/assets/images/farfetch-china/second-life-01.png", "alt": "FARFETCH Second Life 循环时尚界面"}, {"src": "/assets/images/farfetch-china/second-life-02.png", "alt": "FARFETCH Second Life 项目页面"}]},
+        {"label": "Case 05", "title": "FIFI — FARFETCH China PRIVATE DOMAIN", "description": "FARFETCH China 私域内容与活动体验设计。", "images": [{"src": "/assets/images/farfetch-china/fifi-01.png", "alt": "FIFI FARFETCH China 项目主视觉"}, {"src": "/assets/images/farfetch-china/fifi-03.png", "alt": "FIFI FARFETCH China 移动端界面"}]}
+      ]
+    }
+  }
+}
