@@ -128,9 +128,50 @@ final result: passed
 
 ---
 
+## Design QA：服务卡片去箭头与手机双列
+
+**Findings**
+
+- 无遗留 P0/P1/P2 问题。4 张卡片已移除箭头，并在 320px 起保持双列且无文字裁切。
+
+**Implementation Checklist**
+
+- [x] 删除全部箭头节点、样式和未使用图标文件。
+- [x] 卡片结构收敛为标题与说明两行区域。
+- [x] 320/375/532/768 为双列，1100/1280 为四列。
+- [x] 中英文、亮暗模式、页脚布局与控制台通过检查。
+
+## Evidence
+
+- Source visual truth：用户本轮 532 × 766 浏览器标注截图，目标为去箭头、降低高度、手机双列。
+- Implementation：浏览器本轮捕获的中文 375 × 766 与 532 × 766 CSS px 双列视图；另测 320、768、1100、1280。
+- State：中英文首页亮色；另验证中文暗色。
+- Full-view comparison：上一版 532px 单列卡片约 178px 高并带右下箭头；新版为 2 × 2，无箭头，中文约 133px 高。
+- Focused region comparison：375px 中文卡片区已单独目视检查，四张卡片为等高双列，标题与说明均完整。
+- Primary interactions tested：语言与主题切换保持工作；卡片无伪交互。
+- Console errors checked：是，0 条。
+
+## Required fidelity surfaces
+
+- Fonts and typography：中文标题 22px、说明 13px；英文标题 17px，长词与说明无裁切。
+- Spacing and layout rhythm：手机 2 列、12px 列间距；卡片使用紧凑内边距且不保留箭头空白。
+- Colors and visual tokens：继续使用现有背景、文字、弱文字与 1px 边线 token，亮暗模式一致。
+- Image quality and asset fidelity：服务卡片不再包含图像；箭头 SVG 已从源文件和构建产物删除。
+- Copy and content：中文内容保持不变；英文做等义精简以适配最窄双列。
+
+## Comparison history
+
+- Earlier P2：手机为单列，4 张卡片纵向过长；箭头占据第三行并留下额外高度。
+- Fix：删除箭头，卡片改为两行网格，手机使用 2 列并收紧字号、间距和内边距。
+- Post-fix evidence：320px 中文 173px、英文 207px；375px 中文 153px、英文 187px；532px 中文约 133px、英文 147px，均无溢出。
+
+final result: passed
+
+---
+
 ## Current build gate
 
-- Latest report：`首页服务能力卡片与局部排版`。
+- Latest report：`服务卡片去箭头与手机双列`。
 - Required browser evidence、responsive checks、theme checks and console checks are recorded above.
 
 final result: passed

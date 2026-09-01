@@ -1057,18 +1057,18 @@ html[lang="zh-CN"] .home-hero h1 {
 .capability-list {
   width: min(100%, 1100px);
   height: auto;
-  padding: 56px 0 64px;
+  padding: 48px 0 56px;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
 }
 
 .capability-list li {
   min-width: 0;
-  min-height: 220px;
-  padding: 28px 28px 24px;
+  min-height: 180px;
+  padding: 24px;
   display: grid;
-  grid-template-rows: auto 1fr auto;
-  gap: 14px;
+  grid-template-rows: auto 1fr;
+  gap: 12px;
   border-radius: 6px;
   text-align: left;
   font-family: var(--font-sans);
@@ -1089,17 +1089,6 @@ html[lang="zh-CN"] .home-hero h1 {
   font-size: 16px;
   font-weight: 300;
   line-height: 1.55;
-}
-
-.capability-card-arrow {
-  width: 24px;
-  height: 24px;
-  justify-self: end;
-  opacity: 0.45;
-}
-
-:root[data-theme="dark"] .capability-card-arrow {
-  filter: invert(1);
 }
 
 .info-page {
@@ -1355,7 +1344,7 @@ html[lang="zh-CN"] .home-hero h1 {
   .capability-list {
     width: calc(100% - (var(--page-gutter) * 2));
     height: auto;
-    padding: 48px 0 56px;
+    padding: 42px 0 50px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
   }
@@ -1475,24 +1464,28 @@ html[lang="zh-CN"] .home-hero h1 {
   }
 
   .capability-list {
-    padding: 42px 0 52px;
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  .capability-list li {
-    min-height: 178px;
-    padding: 24px 22px 20px;
+    padding: 36px 0 44px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
   }
 
+  .capability-list li {
+    min-height: 0;
+    padding: 18px 14px 16px;
+    gap: 10px;
+  }
+
   .capability-list h2 {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .capability-list p {
-    font-size: 15px;
+    font-size: 13px;
     line-height: 1.55;
+  }
+
+  html[lang="en"] .capability-list h2 {
+    font-size: 17px;
   }
 
   .home-gallery-item:nth-child(1),

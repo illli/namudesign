@@ -100,7 +100,6 @@ def render_home(page: dict, locale: dict, routes: dict) -> str:
                 '        <li class="capability-card">',
                 f'          <h2>{esc(item["name"])}</h2>',
                 f'          <p>{esc(item["description"])}</p>',
-                '          <img class="capability-card-arrow" src="/assets/icons/arrow-right.svg" alt="" aria-hidden="true">',
                 "        </li>",
             ]
         )

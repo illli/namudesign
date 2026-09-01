@@ -11,10 +11,10 @@
       "images": [{"src": "/assets/images/fotile/case-01-01.png", "alt": "FOTILE Brand Campaign Collection", "route": "fotile", "link_label": "View the FOTILE Brand Campaign Collection"}, {"src": "/assets/images/farfetch-china/fifi-01.png", "alt": "FARFETCH China Campaign Collection", "route": "farfetch", "link_label": "View the FARFETCH China Campaign Collection"}, {"src": "/assets/images/home/home-03.png", "alt": "NAMU DESIGN mobile experience project"}, {"src": "/assets/images/home/home-04.png", "alt": "NAMU DESIGN interactive experience project"}],
       "capabilities_label": "Capabilities",
       "capabilities": [
-        {"name": "Brand", "description": "From identity to complete design systems, we build brands designed to grow with the business."},
-        {"name": "Product", "description": "From apps and platforms to complex business interfaces, we design products people use every day."},
+        {"name": "Brand", "description": "From identity to complete design systems, we create brands built for long-term growth."},
+        {"name": "Product", "description": "From apps and platforms to complex interfaces, we design products people use every day."},
         {"name": "Websites", "description": "From landing pages to product stories, we design narratives people want to finish."},
-        {"name": "Development", "description": "From design to deployment, we handle development, delivery and performance refinement so products run reliably."}
+        {"name": "Development", "description": "From design to deployment, we handle development and delivery so products run reliably."}
       ]
     },
     "info": {
