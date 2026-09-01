@@ -6,8 +6,6 @@
   var storageKey = themeState.storageKey || "namu-theme";
   var media = themeState.media || window.matchMedia("(prefers-color-scheme: dark)");
   var themeToggle = document.querySelector(".theme-toggle");
-  var menuToggle = document.querySelector(".menu-toggle");
-  var siteNav = document.querySelector(".site-nav");
 
   function readPreference() {
     var value = null;
@@ -71,37 +69,4 @@
     }
   });
 
-  function setMenuOpen(open) {
-    if (!menuToggle || !siteNav) return;
-
-    menuToggle.setAttribute("aria-expanded", String(open));
-    menuToggle.classList.toggle("is-open", open);
-    siteNav.classList.toggle("is-open", open);
-    document.body.classList.toggle("menu-open", open);
-  }
-
-  if (menuToggle && siteNav) {
-    menuToggle.addEventListener("click", function () {
-      setMenuOpen(menuToggle.getAttribute("aria-expanded") !== "true");
-    });
-
-    siteNav.addEventListener("click", function (event) {
-      if (event.target.closest("a")) {
-        setMenuOpen(false);
-      }
-    });
-
-    document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape" && menuToggle.getAttribute("aria-expanded") === "true") {
-        setMenuOpen(false);
-        menuToggle.focus();
-      }
-    });
-
-    window.addEventListener("resize", function () {
-      if (window.innerWidth >= 768) {
-        setMenuOpen(false);
-      }
-    });
-  }
 })();

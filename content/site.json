@@ -6,7 +6,10 @@
   "contact": {
     "email": "hi@namu.design",
     "phone_display": "18516592921",
-    "phone_href": "+8618516592921"
+    "phone_href": "+8618516592921",
+    "address_zh": "上海市徐汇区淮海中路1610弄1号",
+    "address_en_line_1": "No. 1, Lane 1610, Middle HuaihaiRoad,",
+    "address_en_line_2": "Xuhui District, Shanghai, China"
   },
   "routes": {
     "home": {"zh": "/zh/", "en": "/en/"},

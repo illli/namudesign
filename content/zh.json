@@ -4,14 +4,14 @@
   "language_name": "中文",
   "other_language_name": "EN",
   "labels": {"home": "首页", "info": "INFO", "work": "WORK", "menu": "菜单", "theme": "切换显示模式", "skip": "跳到主要内容", "view_project": "查看项目", "back_to_work": "返回项目"},
-  "footer": {"address": "上海市徐汇区淮海中路1610弄1号"},
+  "footer": {"address": "上海市徐汇区淮海中路1610弄1号", "address_label": "地址", "phone_label": "电话", "consult_label": "咨询"},
   "pages": {
     "home": {
       "template": "home",
       "title": "NAMU DESIGN｜品牌体验设计工作室",
       "description": "NAMU DESIGN 是一家品牌体验设计公司，为品牌打造数字体验、互动与视觉设计。",
       "eyebrow": "NAMU DESIGN",
-      "heading": "NAMUDESIGN 是一家品牌体验设计公司，我们为顶尖品牌打造极致体验。",
+      "heading": "NAMUDESIGN 是一家品牌体验设计公司，\n我们为顶尖品牌打造极致体验。",
       "intro": "从产品策略、概念与品牌设计，到数字体验、营销物料与动态视觉。",
       "images": [
         {"src": "/assets/images/home/home-01.png", "alt": "NAMU DESIGN 品牌设计项目界面"},

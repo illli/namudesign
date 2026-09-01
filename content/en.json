@@ -4,7 +4,7 @@
   "language_name": "English",
   "other_language_name": "中文",
   "labels": {"home": "Home", "info": "INFO", "work": "WORK", "menu": "Menu", "theme": "Change color mode", "skip": "Skip to main content", "view_project": "View project", "back_to_work": "Back to work"},
-  "footer": {"address": "No. 1, Lane 1610, Middle Huaihai Road, Xuhui District, Shanghai, China"},
+  "footer": {"address": "No. 1, Lane 1610, Middle Huaihai Road, Xuhui District, Shanghai, China", "address_label": "ADDRESS", "phone_label": "PHONE", "consult_label": "CONTACT"},
   "pages": {
     "home": {
       "template": "home", "title": "NAMU DESIGN | Brand Experience Studio", "description": "NAMU DESIGN is a brand experience studio creating digital experiences, interactions and visual communication.", "eyebrow": "NAMU DESIGN", "heading": "NAMUDESIGN is a brand experience studio creating exceptional experiences for leading brands.", "intro": "From product strategy, concepts and branding to digital experience, campaign design and motion.",
