@@ -106,7 +106,7 @@ def render_home(page: dict, locale: dict, routes: dict) -> str:
     )
 
 
-def render_info(page: dict) -> str:
+def render_info(page: dict, locale_name: str) -> str:
     paragraphs = "\n".join(f"        <p>{esc(item)}</p>" for item in page["body"])
     client_items = "\n".join(
         f'            <li><img src="{esc(client["src"])}" alt="{esc(client["alt"])}" loading="lazy"></li>'
@@ -124,13 +124,13 @@ def render_info(page: dict) -> str:
                 "        </section>",
             ]
         )
+    team_role_keys = ("role_zh",) if locale_name == "zh" else ("role_zh", "role_en")
     team_rows = "\n".join(
         "\n".join(
             [
-                '            <li class="team-row">',
+                f'            <li class="team-row{" team-row--zh" if locale_name == "zh" else ""}">',
                 f'              <strong>{esc(member["name"])}</strong>',
-                f'              <span>{esc(member["role_zh"])}</span>',
-                f'              <span>{esc(member["role_en"])}</span>',
+                *(f'              <span>{esc(member[key])}</span>' for key in team_role_keys),
                 "            </li>",
             ]
         )
@@ -223,7 +223,7 @@ def build() -> None:
             if page["template"] == "home":
                 body = render_home(page, locale, site["routes"])
             elif page["template"] == "info":
-                body = render_info(page)
+                body = render_info(page, locale_name)
             elif page["template"] == "case-study":
                 body = render_case(page, work_url, locale["labels"]["back_to_work"])
             else:
@@ -253,9 +253,17 @@ def build() -> None:
                 year=datetime.now().year,
                 body=body.rstrip(),
                 footer_address_label=esc(locale["footer"]["address_label"]),
-                footer_address_zh=esc(site["contact"]["address_zh"]),
-                footer_address_en_line_1=esc(site["contact"]["address_en_line_1"]),
-                footer_address_en_line_2=esc(site["contact"]["address_en_line_2"]),
+                footer_address_html=(
+                    esc(site["contact"]["address_zh"])
+                    if locale_name == "zh"
+                    else "<br>".join(
+                        [
+                            esc(site["contact"]["address_zh"]),
+                            esc(site["contact"]["address_en_line_1"]),
+                            esc(site["contact"]["address_en_line_2"]),
+                        ]
+                    )
+                ),
                 footer_phone_label=esc(locale["footer"]["phone_label"]),
                 footer_consult_label=esc(locale["footer"]["consult_label"]),
                 footer_phone=esc(site["contact"]["phone_display"]),

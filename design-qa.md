@@ -2,47 +2,43 @@
 
 ## 对照目标
 
-- 视觉真值：`design-reference/home.png`，1100 × 1562 px，Figma 首页 `119:213`
-- 交互参考：`https://www.hugeinc.com/`；截图 `qa/huge-reference-home.png`，1265 × 712 px
-- 实现页面：`http://127.0.0.1:8000/zh/` 与 `/en/`
-- 状态：亮色模式、连续横向作品轨道
+- 视觉真值：用户截图 `/var/folders/ft/ft35m7vd1flgz0tk8_q25nf40000gn/T/codex-clipboard-09c4f6c8-c768-49c4-9893-dc7d2a23535a.png`，396 × 258 px。
+- 用户修正：中文版团队项删除英文名和英文职位；中文版地址删除英文地址；英文版保持不变。
+- 实现页面：`http://127.0.0.1:8000/zh/info/`。
+- 状态：亮色模式，中文 Info 页。
 
 ## 对照证据
 
-- 桌面同屏对照：`qa/home-marquee-desktop-comparison.png`
-  - Figma 裁为 1085 × 854 px。
-  - 实现为 1085 × 854 px；CSS 视口 1100 × 866，device scale factor 1，浏览器滚动条占 15px。
-- 桌面实现：`qa/home-marquee-desktop-qa.png`
-- 手机实现：`qa/home-marquee-mobile-final.png`，360 × 780 px；CSS 视口 375 × 812，device scale factor 1。
-- 动态证据：桌面轨道在 1.2 秒内从 `translateX(-44.2px)` 移至 `translateX(-100.5px)`；两组各 1185px、组间 60px、轨道 2430px，循环位移 1245px，与重复组起点精确重合。
+- 同屏聚焦对照：`qa/info-zh-chinese-only-comparison.png`，792 × 258 px；左侧为用户截图，右侧为实现中“马文超 / 美术指导”区域。
+- 桌面实现：`qa/info-zh-chinese-only-desktop.png`，1100 × 866 CSS 视口，设备像素比 1。
+- 手机团队实现：`qa/info-zh-chinese-only-mobile.png`，375 × 812 CSS 视口，设备像素比 1；浏览器内容截图为 360 × 780 px。
+- 手机地址实现：`qa/info-zh-address-mobile.png`，同一手机视口与状态。
+- 密度归一化：源图与对照图均按 1 倍像素显示；实现聚焦区域缩放并补白到 396 × 258 px 后，与源图并排检查内容、字体层级和行距。
 
 ## Findings
 
 - 无 P0、P1 或 P2 差异。
-- 字体与排版：Logo、INFO、Source Sans 3 / PingFang SC / Source Han Sans CN、36/56 标题节奏和换行保持 Figma 视觉。
-- 间距与首屏：桌面 1100 × 866 时作品区从 `y=462` 延伸至 `y=866`；手机 375 × 812 时首页舞台从 `y=94` 延伸至 `y=812`。能力标签从下一屏开始，符合按 `100svh` 计算首屏的要求。
-- 色彩：亮色与暗色变量保持一致，暗色实测背景为 `rgb(17, 17, 17)`；动画在两种主题下持续运行。
-- 图片：继续使用四张 Figma 原始素材；尺寸比例和高低错落关系保留。重复组只用于无缝循环，不重复进入辅助技术内容。
-- 文案与链接：第 1 张链接方太，第 2 张链接 FARFETCH China；中文与英文 URL 均正确。后两张为不跳转的 `<figure>` 占位图。
-- 交互：借鉴 Huge 的整图点击与轻微 hover 放大，但按用户要求改为 28 秒线性、无限、自动横向循环。鼠标悬停、键盘聚焦和触摸按下时暂停，离开后恢复；`prefers-reduced-motion` 下停止自动运动并改为可横向滚动。
+- 字体与排版：保留现有 Source Sans 3 / Source Han Sans CN 字体、20px 字号、300 字重和团队列表节奏；仅删除用户明确不要的英文内容。
+- 间距与布局：桌面团队行由三列调整为两列，姓名和中文职位对齐稳定；手机继续为单列堆叠，无额外空行。
+- 色彩：文字、弱化职位色、分隔线和背景变量未改动，与当前亮色设计一致。
+- 图片：本次不修改任何图片资产；工作室图片的裁切和清晰度保持不变。
+- 文案：中文团队 8 人均只保留中文姓名和中文职位；页脚地址只保留“上海市徐汇区淮海中路1610弄1号”。英文页面的姓名、职位和地址结构保持原样。
 
 ## 响应式与交互验证
 
-- 375 × 812、768 × 800、1100 × 866、1280 × 900 的中英文首页均无横向溢出。
-- 各视口中 `.home-stage` 底部与视口底部相同，能力标签从第二屏开始。
-- 方太链接实测进入 `/zh/work/fotile/`；FARFETCH China 链接实测进入 `/zh/work/farfetch-china/`。
-- 动画、亮暗模式、语言入口并存；浏览器控制台无 error 或 warning。
+- 中文页桌面 1100 × 866 与手机 375 × 812 均无横向溢出。
+- 手机团队各行均为两段中文文本；中文地址为单段中文文本。
+- 英文 Info 页仍为每行 3 个字段，原姓名、中文职位、英文职位与中英地址均未改变。
+- 浏览器日志无 error 或 warning，`make check` 通过。
 
 ## Comparison history
 
-1. 初版 P2：手机端沿用固定图库高度，375 × 812 时作品区比首屏多出 42px。
-2. 修复：将文案和作品区组成 `.home-stage`，使用 `min(..., calc(100svh - header))` 与 `auto + 1fr` 网格分配剩余高度。
-3. 初版 P2：移动中的链接在自动化点击时可能因轨道继续位移而命中相邻作品。
-4. 修复：pointer down 时立即暂停轨道，pointer up/cancel 后延迟恢复；两条案例链接重新实测通过。
-5. 最终复核：没有剩余 P0/P1/P2 差异。
+1. 源截图显示“马文超 Jerry / 美术指导 / Creative Director”。
+2. 用户进一步确认中文版同时删除英文名、英文职位和地址中的英文。
+3. 实现后同屏复核：“马文超 / 美术指导”两行完整，第三行已移除；无剩余 P0/P1/P2 差异。
 
 ## Follow-up polish
 
-- 两张占位图未来获得正式案例页后，只需在内容数据中补充 `route` 与本地化 `link_label`。
+- 无。本轮只执行用户明确的中文内容精简，不改动相邻视觉。
 
 final result: passed

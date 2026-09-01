@@ -502,6 +502,10 @@ body[data-page="farfetch"] .brand img {
   color: var(--color-muted);
 }
 
+.team-row--zh {
+  grid-template-columns: 1fr 2.5fr;
+}
+
 .service-row {
   grid-template-columns: 1fr 3fr;
   align-items: start;
